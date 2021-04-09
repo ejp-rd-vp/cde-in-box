@@ -1,2 +1,6 @@
 
 *.backup
+
+graph-db-repo-manger/.idea/
+
+graph-db-repo-manger/venv/
