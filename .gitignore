@@ -12,3 +12,5 @@ graph-db-repo-manager/venv/
 graph-db/graphdb-free-9.7.0-dist.zip
 
 graphdb-data/
+
+graph-db-repo-manager/config.ttl
