@@ -18,9 +18,6 @@ services:
     
   #  This service create's `cde` and `fdp` repositories in graphdb	
   graph_db_repo_manager:
-    build:
-      context: ./graph-db-repo-manager
-      dockerfile: Dockerfile
-    hostname: graph_db_repo_manager
+    build: ./graph-db-repo-manager
     environment:
-      - GRAPH_DB_URL: http://graph_db:7200
+      - "GRAPH_DB_URL=http://graph_db:7200"
