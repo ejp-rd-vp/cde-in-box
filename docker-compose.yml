@@ -15,3 +15,12 @@ services:
       - 7200:7200
     volumes:
       - ./graphdb-data:/opt/graphdb/home
+    
+  #  This service create's `cde` and `fdp` repositories in graphdb	
+  graph_db_repo_manager:
+    build:
+      context: ./graph-db-repo-manager
+      dockerfile: Dockerfile
+    hostname: graph_db_repo_manager
+    environment:
+      - GRAPH_DB_URL: http://graph_db:7200
