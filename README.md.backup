@@ -32,7 +32,7 @@ graph_db:
         version: 9.7.0
 ```
 ## Running cde in box docker setup
-Once you have done above configurations you can run `cde-in-box` setup by running docker-compose file in this repository
+Once you have done above configurations you can run `cde-in-box` setup using running docker-compose file in this repository
 
 ```sh
 docker-compose up -d
