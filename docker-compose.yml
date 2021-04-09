@@ -2,7 +2,7 @@ version: '3'
 
 services:
   #  Graph DB service. BEFORE you start running docker-compose file please make sure that you have downloaded free edition of graphDB zip files	
-  graph_db:
+  graphdb:
     build:
       context: ./graph-db
       dockerfile: Dockerfile        
@@ -10,7 +10,7 @@ services:
         version: 9.7.0
         edition: free
     restart: always
-    hostname: graph_db
+    hostname: graphdb
     ports:
       - 7200:7200
     volumes:
@@ -19,5 +19,7 @@ services:
   #  This service create's `cde` and `fdp` repositories in graphdb	
   graph_db_repo_manager:
     build: ./graph-db-repo-manager
+    depends_on:
+      - graphdb
     environment:
-      - "GRAPH_DB_URL=http://graph_db:7200"
+      - "GRAPH_DB_URL=http://graphdb:7200"

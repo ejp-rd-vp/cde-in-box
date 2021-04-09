@@ -3,4 +3,4 @@ FROM python:3.8
 WORKDIR /usr/src/script
 COPY ./ /usr/src/script
 RUN pip install -r  /usr/src/script/requirements.txt
-CMD ["python", "/usr/src/script/main.py", "$GRAPH_DB_URL"]
+CMD ["python", "/usr/src/script/main.py", "http://graphdb:7200"]

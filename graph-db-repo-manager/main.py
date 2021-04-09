@@ -7,7 +7,9 @@ def check_triple_store_status(graphdb_url):
     url = graphdb_url + "/rest/repositories"
     try:
         response = requests.request("GET", url)
-        return True
+        print(response.headers)
+        if response.status_code == 200:
+            return True
     except:
         return False
 
@@ -66,9 +68,10 @@ def main(graphdb_url):
     repo_description = "Repository to store FAIR Data Point's metadata RDF documents"
     create_repository(graphdb_url, repo_id, repo_description)
 
-
+print("Repository manager script started")
 graphdb_url = sys.argv[1]
 if graphdb_url.endswith("/"):
     graphdb_url = graphdb_url[:-1]
+print(graphdb_url)
 main(graphdb_url)
 
