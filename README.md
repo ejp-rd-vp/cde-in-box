@@ -21,20 +21,126 @@ To run CDE in a box docker-compose you need graphDB triple store free edition. F
 ```sh
 mv graphdb-free-{version}-dist.zip cde-in-box/graph-db
 ```
+**Step 4:** Execute:
 
-**Step 4:** If your `graphdb version` is different from `9.7.0` then change the version number of graph DB in the docker-compose file.
+```
+docker volume create graphdb-data
+```
 
-```sh
-graph_db:
+**Step 5:** If your `graphdb version` is different from `9.7.0` then change the version number of graph DB in the docker-compose file.
+
+```
+version: '3'
+
+services:
+  #  Graph DB service. BEFORE you start running docker-compose file please make sure that you have downloaded free edition of graphDB zip files	
+  graphdb:
+    image: graph-db:9.7.0
     build:
       context: ./graph-db
       dockerfile: Dockerfile        
       args:
         version: 9.7.0
+        edition: free
+    restart: always
+    hostname: graphdb
+    ports:
+      - 7200:7200
+    volumes:
+      - graphdb-data:/opt/graphdb/home
+    
+  #  This service create's `cde` and `fdp` repositories in graphdb	
+  graph_db_repo_manager:
+    build: ./graph-db-repo-manager
+    depends_on:
+      - graphdb
+    environment:
+      - "GRAPH_DB_URL=http://graphdb:7200"
+
+volumes:
+  graphdb-data:
+    external: true
+
 ```
-### Running cde in box docker setup
-Once you have done above configurations you can run `cde-in-box` setup by running docker-compose file in this repository
+
+
+**Step 6: ** Then execute a docker-compose up.   Let it go through the initialization process, and then stop everything.
 
 ```sh
 docker-compose up -d
 ```
+
+You now have a docker container 'graph-db:9.7.0' that we will call in this docker-compose file:
+
+```
+version: "2.0"
+services:
+  
+  graphdb:
+    image: graph-db:9.7.0
+    restart: always
+    hostname: graphdb
+    ports:
+      - 7200:7200
+    volumes:
+      - graphdb-data:/opt/graphdb/home
+
+  cde-box-daemon: 
+    image: markw/cde-box-daemon:latest
+    container_name: cde-box-daemon
+    environment:
+      DPP: ${DPP}
+      DPPPass: ${DPPPass}
+      DPPToken: ${DPPToken}
+    depends_on:
+      - yarrrml_transform
+      - rdfizer
+      - graphdb
+    ports:
+      - 4567:4567
+    volumes:
+        - ./data:/data
+        - ./config:/config
+        
+        
+  yarrrml_transform: 
+    image: markw/yarrrml-parser-ejp:latest
+    container_name: yarrrml_transform
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./data:/data
+  
+  
+  rdfizer: 
+    image: markw/sdmrdfizer_ejp:0.1.0
+    container_name: rdfizer
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./data:/data
+      - ./config:/config
+
+    
+volumes:
+  graphdb-data:
+    external: true
+
+```
+
+**Step 7:  Running cde in box docker-compose
+
+Once you have done above configurations you can run `cde-in-box` setup by running docker-compose file using the above docker-compose.yml
+
+```sh
+docker-compose up -d
+```
+
+**Step 8:  Executing transformations
+
+Put an appropriately columned XXXX.csv into the ./data folder
+
+Put a matching YARRRML template file called XXXX_yarrrml_template.yaml into the ./config folder
+
+call the url:  http://localhost:4567
+
