@@ -64,7 +64,7 @@ volumes:
 ```
 
 
-**Step 6: ** Then execute a docker-compose up.   Let it go through the initialization process, and then stop everything.
+**Step 6:** Then execute a docker-compose up.   Let it go through the initialization process, and then stop everything.
 
 ```sh
 docker-compose up -d
@@ -128,7 +128,7 @@ volumes:
 
 ```
 
-**Step 7:  Running cde in box docker-compose
+**Step 7:**  Running cde in box docker-compose
 
 Once you have done above configurations you can run `cde-in-box` setup by running docker-compose file using the above docker-compose.yml
 
@@ -136,7 +136,7 @@ Once you have done above configurations you can run `cde-in-box` setup by runnin
 docker-compose up -d
 ```
 
-**Step 8:  Executing transformations
+**Step 8:**  Executing transformations
 
 Put an appropriately columned XXXX.csv into the ./data folder
 
