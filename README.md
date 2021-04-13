@@ -8,6 +8,20 @@ git clone https://github.com/ejp-rd-vp/cde-in-box
 ```
 
 ## Instructions
+### Configuring configuration and data folders 
+
+**Step 1:** Create the following folder structure, relative to where you will run the final docker-compose up command:
+
+```
+        .
+        ./data/   (this folder is mounted into sdmrdfizer - see step 1 below)
+        ./data/mydataX.csv  (input csv files)
+        ./data/mydataY.csv...
+        ./data/triples/  (output FAIR data ends up here)
+        ./config/
+        ./config/***_yarrrml_template.yaml (*** is a one-word tag of the "type" of data, e.g. "height")
+```
+
 ### Configuring docker setup
 #### GraphDB
 To run CDE in a box docker-compose you need graphDB triple store free edition. Follow the steps below to get free edition of graphdb.
@@ -130,7 +144,8 @@ volumes:
 
 **Step 7:**  Running cde in box docker-compose
 
-Once you have done above configurations you can run `cde-in-box` setup by running docker-compose file using the above docker-compose.yml
+Once you have done above configurations you can run `cde-in-box` setup by running docker-compose using the above docker-compose.yml,
+**IN THE FOLDER THAT CONTAINS THE ./data/triples and ./config and subfolders**
 
 ```sh
 docker-compose up -d
