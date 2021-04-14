@@ -10,16 +10,16 @@ git clone https://github.com/ejp-rd-vp/cde-in-box
 ## Instructions
 ### Configuring configuration and data folders 
 
-**Step 1:** Create the following folder structure, relative to where you will run the final docker-compose up command:
+**Step 1:** Create the following folder structure, relative to where you plan to keep your pre and post-transformed data:
 
 ```
         .
-        ./data/   (this folder is mounted into sdmrdfizer - see step 1 below)
-        ./data/mydataX.csv  (input csv files)
+        ./data/   
+        ./data/mydataX.csv  (input csv files, e.g. "height.csv")
         ./data/mydataY.csv...
         ./data/triples/  (output FAIR data ends up here)
         ./config/
-        ./config/***_yarrrml_template.yaml (*** is a one-word tag of the "type" of data, e.g. "height")
+        ./config/XXXX_yarrrml_template.yaml (XXXX is a one-word tag of the "type" of data, e.g. "height")
 ```
 
 ### Configuring docker setup
@@ -84,7 +84,7 @@ volumes:
 docker-compose up -d
 ```
 
-You now have a docker container 'graph-db:9.7.0' that we will call in this docker-compose file:
+You now have a docker container 'graph-db:9.7.0' that we will call in this new docker-compose.yml file:
 
 ```
 version: "2.0"
@@ -102,10 +102,6 @@ services:
   cde-box-daemon: 
     image: markw/cde-box-daemon:latest
     container_name: cde-box-daemon
-    environment:
-      DPP: ${DPP}
-      DPPPass: ${DPPPass}
-      DPPToken: ${DPPToken}
     depends_on:
       - yarrrml_transform
       - rdfizer
@@ -142,9 +138,9 @@ volumes:
 
 ```
 
-**Step 7:**  Running cde in box docker-compose
+**Step 7:**  Running CDE in a Box docker-compose
 
-Once you have done above configurations you can run `cde-in-box` setup by running docker-compose using the above docker-compose.yml,
+Once you have done the above configurations you can run `cde-in-a-box` setup by running docker-compose using the above docker-compose.yml,
 **IN THE FOLDER THAT CONTAINS THE ./data/triples and ./config and subfolders**
 
 ```sh
@@ -157,5 +153,6 @@ Put an appropriately columned XXXX.csv into the ./data folder
 
 Put a matching YARRRML template file called XXXX_yarrrml_template.yaml into the ./config folder
 
-call the url:  http://localhost:4567
+call the url:  http://localhost:4567 to trigger the transformation of each CSV file, and auto-load into graphDB (this will over-write what is currrently loaded!  We will make this behaviour more flexible later)
 
+**There is sample data in the "sample_data" folder that can be used to test your installation.**
