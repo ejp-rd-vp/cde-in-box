@@ -87,7 +87,7 @@ docker-compose up -d
 You now have a docker container 'graph-db:9.7.0' that we will call in this new docker-compose.yml file:
 
 ```
-version: "2.0"
+version: "3"
 services:
   
   graphdb:
