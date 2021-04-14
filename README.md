@@ -11,7 +11,7 @@ git clone https://github.com/ejp-rd-vp/cde-in-box
 
 ### Configuring bootstrap services
 #### GraphDB
-The `docker-compose.yml` file in directory `cde-in-box/bootstrap` will setup up graphDB triple store and creates `fdp` and `cde` repositories in graphDB. These two repositories are used other services in CDE in box so make sure that bootstrap services are property setup before you proceed further.
+The `docker-compose.yml` file in directory `cde-in-box/bootstrap` will setup up graphDB triple store and creates `fdp` and `cde` repositories in graphDB. These two repositories are used by other services in CDE in box so make sure that bootstrap services are property setup before you proceed further.
    
 To run `docker-compose.yml` file in `cde-in-box/bootstrap` you need graphDB triple store free edition. Follow the steps below to get free edition of graphdb.
 <br></br>
