@@ -22,3 +22,13 @@ bootstrap/graph-db-repo-manager/.idea/
 bootstrap/graph-db-repo-manager/venv/
 
 metadata/mongo/
+
+cde-ready-to-go/data/triples/
+
+*.ini
+
+cde-ready-to-go/data/height_rml.ttl
+
+cde-ready-to-go/data/height_yarrrml.yaml
+
+cde-ready-to-go/data/triplesstats.csv
