@@ -20,3 +20,5 @@ bootstrap/graph-db/graphdb-free-9.7.0-dist.zip
 bootstrap/graph-db-repo-manager/.idea/
 
 bootstrap/graph-db-repo-manager/venv/
+
+metadata/mongo/
