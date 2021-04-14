@@ -15,6 +15,8 @@ services:
       - 7200:7200
     volumes:
       - ./graphdb-data:/opt/graphdb/home
+    networks:
+      - graphdb_net
     
   #  This service create's `cde` and `fdp` repositories in graphdb	
   graph_db_repo_manager:
@@ -23,3 +25,12 @@ services:
       - graphdb
     environment:
       - "GRAPH_DB_URL=http://graphdb:7200"
+    volumes:
+      - ./mongo/data:/data/db
+      - ./mongo/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+    networks:
+      - graphdb_net
+   
+# Define networks here
+networks:
+  graphdb_net:
