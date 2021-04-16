@@ -64,7 +64,7 @@ def secure_graphdb(graphdb_url):
     headers = {'content-type': "application/json", 'accept': "text/plain"}
     response = requests.request("POST", url, data=payload, headers=headers,
                                 auth = HTTPBasicAuth(GRAPHDB_ADMIN_USER,GRAPHDB_ADMIN_PASSWORD))
-    print(response.text)
+    print(response.text + "GraphDB is secured")
 
 def main(graphdb_url):
     '''
@@ -84,7 +84,7 @@ def main(graphdb_url):
     '''
     Secure graphdb so that only `admin` user access it 
     '''
-    secure_graphdb()
+    secure_graphdb(graphdb_url)
 
 print("Repository manager script started")
 graphdb_url = sys.argv[1]
