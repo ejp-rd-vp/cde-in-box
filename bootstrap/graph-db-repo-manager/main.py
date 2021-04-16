@@ -2,6 +2,10 @@ import requests
 import sys
 import chevron
 import time
+from requests.auth import HTTPBasicAuth
+
+GRAPHDB_ADMIN_USER = "admin"
+GRAPHDB_ADMIN_PASSWORD = "root"
 
 def check_triple_store_status(graphdb_url):
     url = graphdb_url + "/rest/repositories"
@@ -53,6 +57,15 @@ def create_repository(graphdb_url, repo_id, repo_description):
     else:
         print(repo_id + " repository already exits")
 
+def secure_graphdb(graphdb_url):
+    url = graphdb_url + "/rest/security"
+
+    payload = "true"
+    headers = {'content-type': "application/json", 'accept': "text/plain"}
+    response = requests.request("POST", url, data=payload, headers=headers,
+                                auth = HTTPBasicAuth(GRAPHDB_ADMIN_USER,GRAPHDB_ADMIN_PASSWORD))
+    print(response.text)
+
 def main(graphdb_url):
     '''
     Create cde repository in graph DB
@@ -67,6 +80,11 @@ def main(graphdb_url):
     repo_id = "fdp"
     repo_description = "Repository to store FAIR Data Point's metadata RDF documents"
     create_repository(graphdb_url, repo_id, repo_description)
+
+    '''
+    Secure graphdb so that only `admin` user access it 
+    '''
+    secure_graphdb()
 
 print("Repository manager script started")
 graphdb_url = sys.argv[1]
