@@ -19,5 +19,5 @@ repository:
   graphDb:
     url: http://graphdb:7200
     repository: fdp
-    username: ""
-    password: ""
+    username: "admin"
+    password: "root"
