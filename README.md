@@ -45,13 +45,13 @@ Once you have done above configurations you can run `bootstrap` services by runn
 docker-compose up -d
 ```
 
-If the deployment is successful then you access graphDB by visiting following URL.
+If the deployment is successful then you can access the graphDB by visiting the following URL.
 
 | Service name | Local deployment | Production deployment |
 | --- | --- | --- |
 | GraphDB | [http://localhost:7200](http://localhost:7200/) | http://SERVER-IP:7200 |
 
-By default GraphDB service is secured so you need credentials to login to graphDB. Please find the default graphDB's credentials in the table below.
+By default GraphDB service is secured so you need credentials to login to the graphDB. Please find the default graphDB's credentials in the table below.
 
 | Username| Password |
 | --- | --- |
@@ -77,13 +77,13 @@ Once you have done above checks you can run `metadata` services by running `dock
 docker-compose up -d
 ```
 
-If the deployment is successful then you access FAIR Data Point by visiting following URL.
+If the deployment is successful then you can access the FAIR Data Point by visiting the following URL.
 
 | Service name | Local deployment | Production deployment |
 | --- | --- | --- |
 | FAIR Data Point | [http://localhost:8080](http://localhost:8080) | http://SERVER-IP:8080 |
 
-In order to add content to FAIR Data Point you need credentials with write access. Please find the default FAIR Data Point's credentials in the table below.
+In order to add content to the FAIR Data Point you need credentials with write access. Please find the default FAIR Data Point's credentials in the table below.
 
 | Username| Password |
 | --- | --- |
