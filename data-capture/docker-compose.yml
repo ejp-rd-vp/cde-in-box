@@ -16,7 +16,15 @@ services:
     environment:
       - MOLGENIS_POSTGRES_URI=jdbc:postgresql://postgres/molgenis
     ports:
-      - "80:8080"
+      - "8080"
     depends_on:
       - postgres
     restart: on-failure
+  exporter:
+    image: busybox
+    volumes:
+      - ../cde-ready-to-go/data:/data
+    depends_on:
+      - emx2
+    command: |
+      /bin/sh -c 'while true; do sleep 60; wget http://emx2:8080/cde/api/csv/cde_Patient -O /data/cde_Patient.csv; done'
