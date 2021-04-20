@@ -12,1222 +12,158 @@ prefixes:
   this: http://marks.test/this/
   HP: http://purl.obolibrary.org/obo/HP_
 sources:
-  cde_patient_disease_progression-source:
+  dhad:
     access: "dhad.csv"
     referenceFormulation: "csv"
     iterator: "$"
 mappings:
-  identifier_has_value_for_long_information_gathering_role:
+  person:
     sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#ID
-    po:
-    - predicates: http://semanticscience.org/resource/has-value
-      objects:
-        value: "$(pid)"
-        datatype: xsd:string
-  identifier_denotes_role_long_information_gathering_role:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#ID
-    po:
-    - predicates: a
-      objects:
-        value: http://semanticscience.org/resource/identifier
-        type: iri
-    - predicates: a
-      objects:
-        value: http://semanticscience.org/resource/identifier
-        type: iri
-    - predicates: http://semanticscience.org/resource/denotes
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#long_information_gathering_role
-        type: iri
-  person_has_role_long_information_gathering_role:
-    sources:
-    - cde_patient_disease_progression-source
+    - dhad
     s: this:individual_$(pid)#Person
     po:
-    - predicates: a
-      objects:
-        value: http://semanticscience.org/resource/person
-        type: iri
-    - predicates: a
-      objects:
-        value: http://semanticscience.org/resource/person
-        type: iri
-    - predicates: http://semanticscience.org/resource/has-role
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#long_information_gathering_role
-        type: iri
-  long_information_gathering_role_annotation:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#long_information_gathering_role
-    po:
-    - predicates: a
-      objects:
-        value: http://purl.obolibrary.org/obo/OBI_0000093
-        type: iri
-    - predicates: a
-      objects:
-        value: http://semanticscience.org/resource/role
-        type: iri
-    - predicates: rdfs:label
-      objects:
-        value: Patient for longitudinal information gathering
-        datatype: xsd:string
-  identifier_has_value_for_patientRole_symptom_onset:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#ID
-    po:
-    - predicates: http://semanticscience.org/resource/has-value
-      objects:
-        value: "$(pid)"
-        datatype: xsd:string
-  identifier_denotes_role_patientRole_symptom_onset:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#ID
-    po:
-    - predicates: a
-      objects:
-        value: http://semanticscience.org/resource/identifier
-        type: iri
-    - predicates: a
-      objects:
-        value: http://semanticscience.org/resource/identifier
-        type: iri
-    - predicates: http://semanticscience.org/resource/denotes
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#patientRole_symptom_onset
-        type: iri
-  person_has_role_patientRole_symptom_onset:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)#Person
-    po:
-    - predicates: a
-      objects:
-        value: http://semanticscience.org/resource/person
-        type: iri
-    - predicates: a
-      objects:
-        value: http://semanticscience.org/resource/person
-        type: iri
-    - predicates: http://semanticscience.org/resource/has-role
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#patientRole_symptom_onset
-        type: iri
-  patientRole_symptom_onset_annotation:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#patientRole_symptom_onset
-    po:
-    - predicates: a
-      objects:
-        value: http://purl.obolibrary.org/obo/OBI_0000093
-        type: iri
-    - predicates: a
-      objects:
-        value: http://semanticscience.org/resource/role
-        type: iri
-    - predicates: rdfs:label
-      objects:
-        value: Symptom Onset Patient
-        datatype: xsd:string
-  identifier_has_value_for_patientRole_first_contact:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#ID
-    po:
-    - predicates: http://semanticscience.org/resource/has-value
-      objects:
-        value: "$(pid)"
-        datatype: xsd:string
-  identifier_denotes_role_patientRole_first_contact:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#ID
-    po:
-    - predicates: a
-      objects:
-        value: http://semanticscience.org/resource/identifier
-        type: iri
-    - predicates: a
-      objects:
-        value: http://semanticscience.org/resource/identifier
-        type: iri
-    - predicates: http://semanticscience.org/resource/denotes
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#patientRole_first_contact
-        type: iri
-  person_has_role_patientRole_first_contact:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)#Person
-    po:
-    - predicates: a
-      objects:
-        value: http://semanticscience.org/resource/person
-        type: iri
-    - predicates: a
-      objects:
-        value: http://semanticscience.org/resource/person
-        type: iri
-    - predicates: http://semanticscience.org/resource/has-role
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#patientRole_first_contact
-        type: iri
-  patientRole_first_contact_annotation:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#patientRole_first_contact
-    po:
-    - predicates: a
-      objects:
-        value: http://purl.obolibrary.org/obo/OBI_0000093
-        type: iri
-    - predicates: a
-      objects:
-        value: http://semanticscience.org/resource/role
-        type: iri
-    - predicates: rdfs:label
-      objects:
-        value: First Contact Patient
-        datatype: xsd:string
-  identifier_has_value_for_patientRole_diagnosis:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#ID
-    po:
-    - predicates: http://semanticscience.org/resource/has-value
-      objects:
-        value: "$(pid)"
-        datatype: xsd:string
-  identifier_denotes_role_patientRole_diagnosis:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#ID
-    po:
-    - predicates: a
-      objects:
-        value: http://semanticscience.org/resource/identifier
-        type: iri
-    - predicates: a
-      objects:
-        value: http://semanticscience.org/resource/identifier
-        type: iri
-    - predicates: http://semanticscience.org/resource/denotes
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#patientRole_diagnosis
-        type: iri
-  person_has_role_patientRole_diagnosis:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)#Person
-    po:
-    - predicates: a
-      objects:
-        value: http://semanticscience.org/resource/person
-        type: iri
-    - predicates: a
-      objects:
-        value: http://semanticscience.org/resource/person
-        type: iri
-    - predicates: http://semanticscience.org/resource/has-role
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#patientRole_diagnosis
-        type: iri
-  patientRole_diagnosis_annotation:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#patientRole_diagnosis
-    po:
-    - predicates: a
-      objects:
-        value: http://purl.obolibrary.org/obo/OBI_0000093
-        type: iri
-    - predicates: a
-      objects:
-        value: http://semanticscience.org/resource/role
-        type: iri
-    - predicates: rdfs:label
-      objects:
-        value: Diagnosis Patient
-        datatype: xsd:string
-  identifier_has_value_for_patientRole_genetic_diagnosis:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#ID
-    po:
-    - predicates: http://semanticscience.org/resource/has-value
-      objects:
-        value: "$(pid)"
-        datatype: xsd:string
-  identifier_denotes_role_patientRole_genetic_diagnosis:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#ID
-    po:
-    - predicates: a
-      objects:
-        value: http://semanticscience.org/resource/identifier
-        type: iri
-    - predicates: a
-      objects:
-        value: http://semanticscience.org/resource/identifier
-        type: iri
-    - predicates: http://semanticscience.org/resource/denotes
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#patientRole_genetic_diagnosis
-        type: iri
-  person_has_role_patientRole_genetic_diagnosis:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)#Person
-    po:
-    - predicates: a
-      objects:
-        value: http://semanticscience.org/resource/person
-        type: iri
-    - predicates: a
-      objects:
-        value: http://semanticscience.org/resource/person
-        type: iri
-    - predicates: http://semanticscience.org/resource/has-role
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#patientRole_genetic_diagnosis
-        type: iri
-  patientRole_genetic_diagnosis_annotation:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#patientRole_genetic_diagnosis
-    po:
-    - predicates: a
-      objects:
-        value: http://purl.obolibrary.org/obo/OBI_0000093
-        type: iri
-    - predicates: a
-      objects:
-        value: http://semanticscience.org/resource/role
-        type: iri
-    - predicates: rdfs:label
-      objects:
-        value: Genetic Diagnosis Patient
-        datatype: xsd:string
-  identifier_has_value_for_patientRole_phenotyping:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#ID
-    po:
-    - predicates: http://semanticscience.org/resource/has-value
-      objects:
-        value: "$(pid)"
-        datatype: xsd:string
-  identifier_denotes_role_patientRole_phenotyping:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#ID
-    po:
-    - predicates: a
-      objects:
-        value: http://semanticscience.org/resource/identifier
-        type: iri
-    - predicates: a
-      objects:
-        value: http://semanticscience.org/resource/identifier
-        type: iri
-    - predicates: http://semanticscience.org/resource/denotes
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#patientRole_phenotyping
-        type: iri
-  person_has_role_patientRole_phenotyping:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)#Person
-    po:
-    - predicates: a
-      objects:
-        value: http://semanticscience.org/resource/person
-        type: iri
-    - predicates: a
-      objects:
-        value: http://semanticscience.org/resource/person
-        type: iri
-    - predicates: http://semanticscience.org/resource/has-role
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#patientRole_phenotyping
-        type: iri
-  patientRole_phenotyping_annotation:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#patientRole_phenotyping
-    po:
-    - predicates: a
-      objects:
-        value: http://purl.obolibrary.org/obo/OBI_0000093
-        type: iri
-    - predicates: a
-      objects:
-        value: http://semanticscience.org/resource/role
-        type: iri
-    - predicates: rdfs:label
-      objects:
-        value: Phenotyping Patient
-        datatype: xsd:string
-  identifier_has_value_for_patientRole_status:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#ID
-    po:
-    - predicates: http://semanticscience.org/resource/has-value
-      objects:
-        value: "$(pid)"
-        datatype: xsd:string
-  identifier_denotes_role_patientRole_status:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#ID
-    po:
-    - predicates: a
-      objects:
-        value: http://semanticscience.org/resource/identifier
-        type: iri
-    - predicates: a
-      objects:
-        value: http://semanticscience.org/resource/identifier
-        type: iri
-    - predicates: http://semanticscience.org/resource/denotes
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#patientRole_status
-        type: iri
-  person_has_role_patientRole_status:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)#Person
-    po:
-    - predicates: a
-      objects:
-        value: http://semanticscience.org/resource/person
-        type: iri
-    - predicates: a
-      objects:
-        value: http://semanticscience.org/resource/person
-        type: iri
-    - predicates: http://semanticscience.org/resource/has-role
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#patientRole_status
-        type: iri
-  patientRole_status_annotation:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#patientRole_status
-    po:
-    - predicates: a
-      objects:
-        value: http://purl.obolibrary.org/obo/OBI_0000093
-        type: iri
-    - predicates: a
-      objects:
-        value: http://semanticscience.org/resource/role
-        type: iri
-    - predicates: rdfs:label
-      objects:
-        value: Patient for status recording
-        datatype: xsd:string
-  long_information_gathering_role_realized_longitudinal_information_gathering_process:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#long_information_gathering_role
-    po:
-    - predicates: http://semanticscience.org/resource/is-realized-in
-      objects:
-        value: this:individual_$(pid)_process#longitudinal_information_gathering_process
-        type: iri
-  longitudinal_information_gathering_process_process_annotation:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_process#longitudinal_information_gathering_process
-    po:
-    - predicates: rdf:type
-      objects:
-        value: http://semanticscience.org/resource/process
-        type: iri
-    - predicates: rdf:type
-      objects:
-        value: http://semanticscience.org/resource/SIO_001052
-        type: iri
-    - predicates: rdfs:label
-      objects:
-        value: patient longitudinal data collection
-        datatype: xsd:string
-  patientRole_symptom_onset_realized_patientRole_symptom_onset_process:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#patientRole_symptom_onset
-    po:
-    - predicates: http://semanticscience.org/resource/is-realized-in
-      objects:
-        value: this:individual_$(pid)_$(uniqid)_process#patientRole_symptom_onset_process
-        type: iri
-  patientRole_symptom_onset_process_process_annotation:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)_process#patientRole_symptom_onset_process
-    po:
-    - predicates: rdf:type
-      objects:
-        value: http://semanticscience.org/resource/process
-        type: iri
-    - predicates: rdf:type
-      objects:
-        value: http://semanticscience.org/resource/SIO_001052
-        type: iri
-    - predicates: rdfs:label
-      objects:
-        value: data collection - symptom onset date recording process
-        datatype: xsd:string
-  patientRole_first_contact_realized_patientRole_first_contact_process:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#patientRole_first_contact
-    po:
-    - predicates: http://semanticscience.org/resource/is-realized-in
-      objects:
-        value: this:individual_$(pid)_$(uniqid)_process#patientRole_first_contact_process
-        type: iri
-  patientRole_first_contact_process_process_annotation:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)_process#patientRole_first_contact_process
-    po:
-    - predicates: rdf:type
-      objects:
-        value: http://semanticscience.org/resource/process
-        type: iri
-    - predicates: rdf:type
-      objects:
-        value: http://purl.obolibrary.org/obo/NCIT_C159705
-        type: iri
-    - predicates: rdfs:label
-      objects:
-        value: first confirmed visit
-        datatype: xsd:string
-  16185509626243196_process_custom_annotation:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)_process#patientRole_first_contact_process
-    po:
-    - predicates: http://semanticscience.org/resource/SIO_000669
-      objects:
-        value: "$(first_contact_date)"
-        datatype: xsd:date
-  patientRole_genetic_diagnosis_realized_patientRole_genetic_diagnosis_process:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#patientRole_genetic_diagnosis
-    po:
-    - predicates: http://semanticscience.org/resource/is-realized-in
-      objects:
-        value: this:individual_$(pid)_$(uniqid)_process#patientRole_genetic_diagnosis_process
-        type: iri
-  patientRole_genetic_diagnosis_process_process_annotation:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)_process#patientRole_genetic_diagnosis_process
-    po:
-    - predicates: rdf:type
-      objects:
-        value: http://semanticscience.org/resource/process
-        type: iri
-    - predicates: rdf:type
-      objects:
-        value: http://purl.obolibrary.org/obo/NCIT_C15709
-        type: iri
-    - predicates: rdfs:label
-      objects:
-        value: genetic testing
-        datatype: xsd:string
-  patientRole_phenotyping_realized_patientRole_phenotyping_process:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#patientRole_phenotyping
-    po:
-    - predicates: http://semanticscience.org/resource/is-realized-in
-      objects:
-        value: this:individual_$(pid)_$(uniqid)_process#patientRole_phenotyping_process
-        type: iri
-  patientRole_phenotyping_process_process_annotation:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)_process#patientRole_phenotyping_process
-    po:
-    - predicates: rdf:type
-      objects:
-        value: http://semanticscience.org/resource/process
-        type: iri
-    - predicates: rdf:type
-      objects:
-        value: http://purl.obolibrary.org/obo/OBI_0001546
-        type: iri
-    - predicates: rdfs:label
-      objects:
-        value: comparative phenotypic assessment
-        datatype: xsd:string
-  patientRole_diagnosis_realized_medical_diagnosis:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#patientRole_diagnosis
-    po:
-    - predicates: http://semanticscience.org/resource/is-realized-in
-      objects:
-        value: this:individual_$(pid)_$(uniqid)_process#medical_diagnosis
-        type: iri
-  medical_diagnosis_process_annotation:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)_process#medical_diagnosis
-    po:
-    - predicates: rdf:type
-      objects:
-        value: http://semanticscience.org/resource/process
-        type: iri
-    - predicates: rdf:type
-      objects:
-        value: http://semanticscience.org/resource/SIO_001001
-        type: iri
-    - predicates: rdfs:label
-      objects:
-        value: medical diagnosis
-        datatype: xsd:string
-  patientRole_status_realized_patient_status:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#patientRole_status
-    po:
-    - predicates: http://semanticscience.org/resource/is-realized-in
-      objects:
-        value: this:individual_$(pid)_$(uniqid)_process#patient_status
-        type: iri
-  patient_status_process_annotation:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)_process#patient_status
-    po:
-    - predicates: rdf:type
-      objects:
-        value: http://semanticscience.org/resource/process
-        type: iri
-    - predicates: rdf:type
-      objects:
-        value: http://semanticscience.org/resource/SIO_001052
-        type: iri
-    - predicates: rdfs:label
-      objects:
-        value: patient status
-        datatype: xsd:string
-  longitudinal_information_gathering_process_has_part_patientRole_symptom_onset_process:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_process#longitudinal_information_gathering_process
-    po:
-    - predicates: http://semanticscience.org/resource/has-part
-      objects:
-        value: this:individual_$(pid)_$(uniqid)_process#patientRole_symptom_onset_process
-        type: iri
-  longitudinal_information_gathering_process_has_part_patientRole_first_contact_process:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_process#longitudinal_information_gathering_process
-    po:
-    - predicates: http://semanticscience.org/resource/has-part
-      objects:
-        value: this:individual_$(pid)_$(uniqid)_process#patientRole_first_contact_process
-        type: iri
-  longitudinal_information_gathering_process_has_part_patientRole_genetic_diagnosis_process:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_process#longitudinal_information_gathering_process
-    po:
-    - predicates: http://semanticscience.org/resource/has-part
-      objects:
-        value: this:individual_$(pid)_$(uniqid)_process#patientRole_genetic_diagnosis_process
-        type: iri
-  longitudinal_information_gathering_process_has_part_patientRole_phenotyping_process:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_process#longitudinal_information_gathering_process
-    po:
-    - predicates: http://semanticscience.org/resource/has-part
-      objects:
-        value: this:individual_$(pid)_$(uniqid)_process#patientRole_phenotyping_process
-        type: iri
-  longitudinal_information_gathering_process_has_part_medical_diagnosis:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_process#longitudinal_information_gathering_process
-    po:
-    - predicates: http://semanticscience.org/resource/has-part
-      objects:
-        value: this:individual_$(pid)_$(uniqid)_process#medical_diagnosis
-        type: iri
-  longitudinal_information_gathering_process_has_part_patient_status:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_process#longitudinal_information_gathering_process
-    po:
-    - predicates: http://semanticscience.org/resource/has-part
-      objects:
-        value: this:individual_$(pid)_$(uniqid)_process#patient_status
-        type: iri
-  patientRole_symptom_onset_process_process_has_output:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)_process#patientRole_symptom_onset_process
-    po:
-    - predicates: http://semanticscience.org/resource/has-output
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#patientRole_symptom_onset_process_Output
-        type: iri
-  patientRole_symptom_onset_process_Output_annotation:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#patientRole_symptom_onset_process_Output
-    po:
-    - predicates: rdf:type
-      objects:
-        value: http://semanticscience.org/resource/information-content-entity
-        type: iri
-  patientRole_symptom_onset_process_Output_type_annotation:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#patientRole_symptom_onset_process_Output
-    po:
-    - predicates: rdf:type
-      objects:
-        value: http://purl.obolibrary.org/obo/NCIT_C124353
-        type: iri
-  patientRole_symptom_onset_process_Output_type_label_annotation:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#patientRole_symptom_onset_process_Output
-    po:
-    - predicates: rdfs:label
-      objects:
-        value: age at onset
-        datatype: xsd:string
-  patientRole_symptom_onset_process_Output_value_annotation:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#patientRole_symptom_onset_process_Output
-    po:
-    - predicates: http://semanticscience.org/resource/has-value
-      objects:
-        value: "$(symptom_onset_age)"
-        datatype: xsd:dateTime
-  patientRole_genetic_diagnosis_process_process_has_output:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)_process#patientRole_genetic_diagnosis_process
-    po:
-    - predicates: http://semanticscience.org/resource/has-output
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#patientRole_genetic_diagnosis_process_Output
-        type: iri
-  patientRole_genetic_diagnosis_process_Output_annotation:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#patientRole_genetic_diagnosis_process_Output
-    po:
-    - predicates: rdf:type
-      objects:
-        value: http://semanticscience.org/resource/information-content-entity
-        type: iri
-  patientRole_genetic_diagnosis_process_Output_type_annotation:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#patientRole_genetic_diagnosis_process_Output
-    po:
-    - predicates: rdf:type
-      objects:
-        value: http://semanticscience.org/resource/SIO_001381
-        type: iri
-  patientRole_genetic_diagnosis_process_Output_type_label_annotation:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#patientRole_genetic_diagnosis_process_Output
-    po:
-    - predicates: rdfs:label
-      objects:
-        value: genome sequence variant
-        datatype: xsd:string
-  patientRole_genetic_diagnosis_process_Output_value_annotation:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#patientRole_genetic_diagnosis_process_Output
-    po:
-    - predicates: http://semanticscience.org/resource/has-value
-      objects:
-        value: "$(hgvs_variant)"
-        datatype: xsd:string
-  patientRole_phenotyping_process_process_has_output:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)_process#patientRole_phenotyping_process
-    po:
-    - predicates: http://semanticscience.org/resource/has-output
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#patientRole_phenotyping_process_Output
-        type: iri
-  patientRole_phenotyping_process_Output_annotation:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#patientRole_phenotyping_process_Output
-    po:
-    - predicates: rdf:type
-      objects:
-        value: http://semanticscience.org/resource/information-content-entity
-        type: iri
-  patientRole_phenotyping_process_Output_type_annotation:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#patientRole_phenotyping_process_Output
-    po:
-    - predicates: rdf:type
-      objects:
-        value: http://semanticscience.org/resource/SIO_010056
-        type: iri
-  patientRole_phenotyping_process_Output_type_label_annotation:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#patientRole_phenotyping_process_Output
-    po:
-    - predicates: rdfs:label
-      objects:
-        value: phenotypic observations
-        datatype: xsd:string
-  inout_from_patientRole_phenotyping_process_refers_to_concepts:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#patientRole_phenotyping_process_Output
-    po:
-    - predicates: http://semanticscience.org/resource/refers-to
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#HP1_TypedAttributeNode
-        type: iri
-    - predicates: http://semanticscience.org/resource/refers-to
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#HP2_TypedAttributeNode
-        type: iri
-    - predicates: http://semanticscience.org/resource/refers-to
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#HP3_TypedAttributeNode
-        type: iri
-    - predicates: http://semanticscience.org/resource/refers-to
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#HP4_TypedAttributeNode
-        type: iri
-    - predicates: http://semanticscience.org/resource/refers-to
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#HP5_TypedAttributeNode
-        type: iri
-    - predicates: http://semanticscience.org/resource/refers-to
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#HP6_TypedAttributeNode
-        type: iri
-    - predicates: http://semanticscience.org/resource/refers-to
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#HP7_TypedAttributeNode
-        type: iri
-    - predicates: http://semanticscience.org/resource/refers-to
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#HP8_TypedAttributeNode
-        type: iri
-    - predicates: http://semanticscience.org/resource/refers-to
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#HP9_TypedAttributeNode
-        type: iri
-    - predicates: http://semanticscience.org/resource/refers-to
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#HP10_TypedAttributeNode
-        type: iri
-  inout_from_patientRole_phenotyping_process_refers_to_concept_HP1_type:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#HP1_TypedAttributeNode
-    po:
-    - predicates: rdf:type
-      objects:
-        value: "$(HP1)"
-        type: iri
-  inout_from_patientRole_phenotyping_process_refers_to_concept_HP1_label:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#HP1_TypedAttributeNode
-    po:
-    - predicates: rdfs:label
-      objects:
-        value: "$(HP1L)"
-        datatype: xsd:string
-  inout_from_patientRole_phenotyping_process_refers_to_concept_HP2_type:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#HP2_TypedAttributeNode
-    po:
-    - predicates: rdf:type
-      objects:
-        value: "$(HP2)"
-        type: iri
-  inout_from_patientRole_phenotyping_process_refers_to_concept_HP2_label:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#HP2_TypedAttributeNode
-    po:
-    - predicates: rdfs:label
-      objects:
-        value: "$(HP2L)"
-        datatype: xsd:string
-  inout_from_patientRole_phenotyping_process_refers_to_concept_HP3_type:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#HP3_TypedAttributeNode
-    po:
-    - predicates: rdf:type
-      objects:
-        value: "$(HP3)"
-        type: iri
-  inout_from_patientRole_phenotyping_process_refers_to_concept_HP3_label:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#HP3_TypedAttributeNode
-    po:
-    - predicates: rdfs:label
-      objects:
-        value: "$(HP3L)"
-        datatype: xsd:string
-  inout_from_patientRole_phenotyping_process_refers_to_concept_HP4_type:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#HP4_TypedAttributeNode
-    po:
-    - predicates: rdf:type
-      objects:
-        value: "$(HP4)"
-        type: iri
-  inout_from_patientRole_phenotyping_process_refers_to_concept_HP4_label:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#HP4_TypedAttributeNode
-    po:
-    - predicates: rdfs:label
-      objects:
-        value: "$(HP4L)"
-        datatype: xsd:string
-  inout_from_patientRole_phenotyping_process_refers_to_concept_HP5_type:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#HP5_TypedAttributeNode
-    po:
-    - predicates: rdf:type
-      objects:
-        value: "$(HP5)"
-        type: iri
-  inout_from_patientRole_phenotyping_process_refers_to_concept_HP5_label:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#HP5_TypedAttributeNode
-    po:
-    - predicates: rdfs:label
-      objects:
-        value: "$(HP5L)"
-        datatype: xsd:string
-  inout_from_patientRole_phenotyping_process_refers_to_concept_HP6_type:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#HP6_TypedAttributeNode
-    po:
-    - predicates: rdf:type
-      objects:
-        value: "$(HP6)"
-        type: iri
-  inout_from_patientRole_phenotyping_process_refers_to_concept_HP6_label:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#HP6_TypedAttributeNode
-    po:
-    - predicates: rdfs:label
-      objects:
-        value: "$(HP6L)"
-        datatype: xsd:string
-  inout_from_patientRole_phenotyping_process_refers_to_concept_HP7_type:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#HP7_TypedAttributeNode
-    po:
-    - predicates: rdf:type
-      objects:
-        value: "$(HP7)"
-        type: iri
-  inout_from_patientRole_phenotyping_process_refers_to_concept_HP7_label:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#HP7_TypedAttributeNode
-    po:
-    - predicates: rdfs:label
-      objects:
-        value: "$(HP7L)"
-        datatype: xsd:string
-  inout_from_patientRole_phenotyping_process_refers_to_concept_HP8_type:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#HP8_TypedAttributeNode
-    po:
-    - predicates: rdf:type
-      objects:
-        value: "$(HP8)"
+    - p: sio:SIO_000228
+      o:
+        value: this:individual_$(pid)#patientRole
         type: iri
-  inout_from_patientRole_phenotyping_process_refers_to_concept_HP8_label:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#HP8_TypedAttributeNode
-    po:
-    - predicates: rdfs:label
-      objects:
-        value: "$(HP8L)"
-        datatype: xsd:string
-  inout_from_patientRole_phenotyping_process_refers_to_concept_HP9_type:
+  patientRole:
     sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#HP9_TypedAttributeNode
+    - dhad
+    s: this:individual_$(pid)#patientRole
     po:
-    - predicates: rdf:type
-      objects:
-        value: "$(HP9)"
+    - [a, obo:OBI_0000093]
+    - p: sio:SIO_000356
+      o:
+        value: this:individual_$(pid)#processDiag
         type: iri
-  inout_from_patientRole_phenotyping_process_refers_to_concept_HP9_label:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#HP9_TypedAttributeNode
-    po:
-    - predicates: rdfs:label
-      objects:
-        value: "$(HP9L)"
-        datatype: xsd:string
-  inout_from_patientRole_phenotyping_process_refers_to_concept_HP10_type:
+  processDiag:
     sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#HP10_TypedAttributeNode
+    - dhad
+    s: this:individual_$(pid)#processDiag
     po:
-    - predicates: rdf:type
-      objects:
-        value: "$(HP10)"
+    - [a, sio:SIO_001001]
+    - p: sio:SIO_000229
+      o: 
+        value: this:individual_$(pid)#diagOutcome
         type: iri
-  inout_from_patientRole_phenotyping_process_refers_to_concept_HP10_label:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#HP10_TypedAttributeNode
-    po:
-    - predicates: rdfs:label
-      objects:
-        value: "$(HP10L)"
-        datatype: xsd:string
-  person_has_attribute_from_patientRole_phenotyping_process:
+  diagOutcome:
     sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)#Person
+    - dhad
+    s: this:individual_$(pid)#diagOutcome
     po:
-    - predicates: http://semanticscience.org/resource/SIO_000008
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#HP1_TypedAttributeNode
-        type: iri
-    - predicates: http://semanticscience.org/resource/SIO_000008
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#HP2_TypedAttributeNode
-        type: iri
-    - predicates: http://semanticscience.org/resource/SIO_000008
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#HP3_TypedAttributeNode
-        type: iri
-    - predicates: http://semanticscience.org/resource/SIO_000008
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#HP4_TypedAttributeNode
-        type: iri
-    - predicates: http://semanticscience.org/resource/SIO_000008
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#HP5_TypedAttributeNode
-        type: iri
-    - predicates: http://semanticscience.org/resource/SIO_000008
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#HP6_TypedAttributeNode
-        type: iri
-    - predicates: http://semanticscience.org/resource/SIO_000008
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#HP7_TypedAttributeNode
-        type: iri
-    - predicates: http://semanticscience.org/resource/SIO_000008
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#HP8_TypedAttributeNode
-        type: iri
-    - predicates: http://semanticscience.org/resource/SIO_000008
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#HP9_TypedAttributeNode
-        type: iri
-    - predicates: http://semanticscience.org/resource/SIO_000008
+    - p: a
+      o:
+      - sio:SIO_000340
+      - sio:SIO_000015
+    - p: sio:SIO_000628
       objects:
-        value: this:individual_$(pid)_$(uniqid)#HP10_TypedAttributeNode
+      - value: this:individual_$(pid)#disease1
         type: iri
-  medical_diagnosis_process_has_output:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)_process#medical_diagnosis
-    po:
-    - predicates: http://semanticscience.org/resource/has-output
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#medical_diagnosis_Output
+      - value: this:individual_$(pid)#disease2
         type: iri
-  medical_diagnosis_Output_annotation:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#medical_diagnosis_Output
-    po:
-    - predicates: rdf:type
-      objects:
-        value: http://semanticscience.org/resource/information-content-entity
+      - value: this:individual_$(pid)#disease3
         type: iri
-  medical_diagnosis_Output_type_annotation:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#medical_diagnosis_Output
-    po:
-    - predicates: rdf:type
-      objects:
-        value: http://semanticscience.org/resource/SIO_001003
+      - value: this:individual_$(pid)#disease4
         type: iri
-  medical_diagnosis_Output_type_label_annotation:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#medical_diagnosis_Output
-    po:
-    - predicates: rdfs:label
-      objects:
-        value: diagnostic_opinion
-        datatype: xsd:string
-  medical_diagnosis_output_annotation_start:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#medical_diagnosis_Output
-    po:
-    - predicates: http://semanticscience.org/resource/start-time
-      objects:
-        value: "$(date)"
-        datatype: xsd:dateTime
-  inout_from_medical_diagnosis_refers_to_concepts:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#medical_diagnosis_Output
-    po:
-    - predicates: http://semanticscience.org/resource/refers-to
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#ordo_uri_TypedAttributeNode
+      - value: this:individual_$(pid)#disease5
         type: iri
-  inout_from_medical_diagnosis_refers_to_concept_ordo_uri_type:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#ordo_uri_TypedAttributeNode
-    po:
-    - predicates: rdf:type
-      objects:
-        value: "$(ordo_uri)"
+      - value: this:individual_$(pid)#disease6
         type: iri
-  person_has_attribute_from_medical_diagnosis:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)#Person
-    po:
-    - predicates: http://semanticscience.org/resource/SIO_000008
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#ordo_uri_TypedAttributeNode
+      - value: this:individual_$(pid)#disease7
         type: iri
-  patient_status_process_has_output:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)_process#patient_status
-    po:
-    - predicates: http://semanticscience.org/resource/has-output
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#patient_status_Output
+      - value: this:individual_$(pid)#disease8
         type: iri
-  patient_status_Output_annotation:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#patient_status_Output
-    po:
-    - predicates: rdf:type
-      objects:
-        value: http://semanticscience.org/resource/information-content-entity
+      - value: this:individual_$(pid)#disease9
         type: iri
-  patient_status_Output_type_annotation:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#patient_status_Output
-    po:
-    - predicates: rdf:type
-      objects:
-        value: http://semanticscience.org/resource/realizable-entity
+      - value: this:individual_$(pid)#disease10
         type: iri
-  patient_status_Output_type_label_annotation:
-    sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#patient_status_Output
-    po:
-    - predicates: rdfs:label
-      objects:
-        value: "$(status_label)"
-        datatype: xsd:string
-  patient_status_Output_value_annotation:
+  disease1:
     sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#patient_status_Output
+    - dhad
+    s: this:individual_$(pid)#disease1
     po:
-    - predicates: http://semanticscience.org/resource/has-value
-      objects:
-        value: "$(status_label)"
-        datatype: xsd:string
-  patient_status_output_annotation_end:
+    - p: a
+      o: $(HP1)
+    - p: rdfs:label
+      o: $(HP1L)
+  disease2:
     sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#patient_status_Output
+    - dhad
+    s: this:individual_$(pid)#disease2
     po:
-    - predicates: http://semanticscience.org/resource/end-time
-      objects:
-        value: "$(death_date)"
-        datatype: xsd:dateTime
-  inout_from_patient_status_refers_to_concepts:
+    - p: a
+      o: $(HP2)
+    - p: rdfs:label
+      o: $(HP2L)
+  disease3:
     sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#patient_status_Output
+    - dhad
+    s: this:individual_$(pid)#disease3
     po:
-    - predicates: http://semanticscience.org/resource/refers-to
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#status_uri_TypedAttributeNode
-        type: iri
-  inout_from_patient_status_refers_to_concept_status_uri_type:
+    - p: a
+      o: $(HP3)
+    - p: rdfs:label
+      o: $(HP3L)
+  disease4:
     sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)_$(uniqid)#status_uri_TypedAttributeNode
+    - dhad
+    s: this:individual_$(pid)#disease4
     po:
-    - predicates: rdf:type
-      objects:
-        value: "$(status_uri)"
-        type: iri
-  person_has_attribute_from_patient_status:
+    - p: a
+      o: $(HP4)
+    - p: rdfs:label
+      o: $(HP4L)
+  disease5:
     sources:
-    - cde_patient_disease_progression-source
-    s: this:individual_$(pid)#Person
+    - dhad
+    s: this:individual_$(pid)#disease5
     po:
-    - predicates: http://semanticscience.org/resource/SIO_000008
-      objects:
-        value: this:individual_$(pid)_$(uniqid)#status_uri_TypedAttributeNode
-        type: iri
+    - p: a
+      o: $(HP5)
+    - p: rdfs:label
+      o: $(HP5L)
+  disease6:
+    sources:
+    - dhad
+    s: this:individual_$(pid)#disease6
+    po:
+    - p: a
+      o: $(HP6)
+    - p: rdfs:label
+      o: $(HP6L)
+  disease7:
+    sources:
+    - dhad
+    s: this:individual_$(pid)#disease7
+    po:
+    - p: a
+      o: $(HP7)
+    - p: rdfs:label
+      o: $(HP7L)
+  disease8:
+    sources:
+    - dhad
+    s: this:individual_$(pid)#disease8
+    po:
+    - p: a
+      o: $(HP8)
+    - p: rdfs:label
+      o: $(HP8L)
+  disease9:
+    sources:
+    - dhad
+    s: this:individual_$(pid)#disease9
+    po:
+    - p: a
+      o: $(HP9)
+    - p: rdfs:label
+      o: $(HP9L)
+  disease10:
+    sources:
+    - dhad
+    s: this:individual_$(pid)#disease10
+    po:
+    - p: a
+      o: $(HP10)
+    - p: rdfs:label
+      o: $(HP10L)
