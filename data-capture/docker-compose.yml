@@ -27,4 +27,4 @@ services:
     depends_on:
       - emx2
     command: |
-      /bin/sh -c 'while true; do sleep 60; wget http://emx2:8080/cde/api/csv/cde_Patient -O /data/cde_Patient.csv; done'
+      /bin/sh -c 'while true; do sleep 60; wget http://emx2:8080/cde/api/csv/cde_Patient -O /data/personal.csv; cp /data/personal.csv /data/dhad.csv; done'
