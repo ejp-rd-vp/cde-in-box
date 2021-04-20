@@ -89,6 +89,17 @@ In order to add content to the FAIR Data Point you need credentials with write a
 | --- | --- |
 | `albert.einstein@example.com` | `password` |
 
+### Running data capture services
+
+1. In the `data-capture` directory, run `docker-compose up`.
+2. Once it's started up, in the browser go to http://localhost:8080
+3. Log in with username `admin`, password `admin`
+4. Create a new schema `cde`
+5. In the schema, upload the file `emx2/emx2-cde-fdp-rml-compat-v2.xlsx`
+6. Open the cde schema settings and make user `anonymous` role `Viewer`.
+7. You can edit the data in the Patient table.
+8. Once a minute, the data will be exported to the data directory of the transformation services
+
 ### Configuring data transformation services
 
 #### Configuring configuration and data folders 
