@@ -4,8 +4,8 @@ import time
 import os
 from requests.auth import HTTPBasicAuth
 
-GRAPHDB_ADMIN_USER = "admin"
-GRAPHDB_ADMIN_PASSWORD = "root"
+GRAPHDB_ADMIN_USER = os.environ['GRAPH_DB_ADMIN_USERNAME']
+GRAPHDB_ADMIN_PASSWORD = os.environ['GRAPH_DB_ADMIN_PASSWORD']
 
 def check_triple_store_status(graphdb_url):
     url = graphdb_url + "/rest/repositories"
