@@ -38,6 +38,14 @@ services:
     networks:
       - default
       - bootstrap_graphdb_net
+      
+  triple_loader: 
+    build: ./triple-loader
+    volumes:
+        - ./data:/data
+    networks:
+      - default
+      - bootstrap_graphdb_net 
         
 # Define networks here
 networks:
