@@ -25,6 +25,8 @@ services:
       - graphdb
     environment:
       - "GRAPH_DB_URL=http://graphdb:7200"
+      - "GRAPH_DB_ADMIN_USERNAME=admin"
+      - "GRAPH_DB_ADMIN_PASSWORD=root"
     networks:
       - graphdb_net
    
