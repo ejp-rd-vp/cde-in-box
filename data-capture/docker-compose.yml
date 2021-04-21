@@ -1,0 +1,30 @@
+version: "3.0"
+services:
+  postgres:
+    image: postgres:13-alpine
+    environment:
+      - POSTGRES_USER=molgenis
+      - POSTGRES_PASSWORD=molgenis
+      - POSTGRES_DB=molgenis
+    expose:
+      - "5432"
+    volumes:
+      - ./psql_data:/var/lib/postgresql/data
+    command: -c 'shared_buffers=256MB' -c 'max_locks_per_transaction=1024'
+  emx2:
+    image: molgenis/molgenis-emx2:5.25.0
+    environment:
+      - MOLGENIS_POSTGRES_URI=jdbc:postgresql://postgres/molgenis
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    restart: on-failure
+  exporter:
+    image: busybox
+    volumes:
+      - ../cde-ready-to-go/data:/data
+    depends_on:
+      - emx2
+    command: |
+      /bin/sh -c 'while true; do sleep ${CAPTURE_SYNC_WAIT:-60}; wget http://emx2:8080/cde/api/csv/cde_Patient -O /data/personal.csv; cp /data/personal.csv /data/dhad.csv; done'

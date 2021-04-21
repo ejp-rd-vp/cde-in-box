@@ -17,7 +17,7 @@ services:
       - bootstrap_graphdb_net          
         
   yarrrml_transform: 
-    image: markw/yarrrml-parser-ejp:latest
+    image: markw/yarrrml-parser-ejp:0.0.3
     container_name: yarrrml_transform
     ports:
       - "3000:3000"
