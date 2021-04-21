@@ -1,0 +1,19 @@
+---
+prefixes:
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  ex: https://ejp-rd.eu/ids/
+  obo: http://purl.obolibrary.org/obo/
+  sio: http://semanticscience.org/resource/
+  vocab: https://ejp-rd.eu/vocab/
+  pico: https://data.cochrane.org/ontologies/pico/
+  ndfrt: http://purl.bioontology.org/ontology/NDFRT/
+  edam: http://purl.bioontology.org/ontology/EDAM/
+  this: http://marks.test/this/
+sources:
+  stats-source:
+    access: "triplesstats.csv"
+    referenceFormulation: "csv"
+    iterator: "$"
+mappings:
+# TODO
