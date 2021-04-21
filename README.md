@@ -138,3 +138,37 @@ Put a matching YARRRML template file called XXXX_yarrrml_template.yaml into the 
 call the url:  http://localhost:4567 to trigger the transformation of each CSV file, and auto-load into graphDB (this will over-write what is currrently loaded!  We will make this behaviour more flexible later)
 
 **There is sample data in the "sample_data" folder that can be used to test your installation.**
+
+# Explore the transformed data
+In the GraphDB, you can now explore the generated graph:
+http://localhost:7200/graphs-visualizations?uri=http:%2F%2Fmarks.test%2Fthis%2Findividual_Patient001%23Person
+
+![Patient 001](doc/img/patient-001.png)
+
+Or execute [sparql](http://localhost:7200/sparql) queries, for example to count patients with a given disease:
+```
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX ordo: <http://www.orpha.net/ORDO/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT (COUNT(DISTINCT ?person) AS ?num_of_person) ?ordo_class_iri WHERE {
+    VALUES (?ordo_class_iri) {(<http://www.orpha.net/ORDO/Orphanet_166260>)} # Dentinogenesis imperfecta type 2
+    # GET person(s) and their roles
+    ?person sio:SIO_000228 ?role.
+    # CHECK if one of these roles is `rdf:type` patient role
+    ?role rdf:type obo:OBI_0000093.
+    # GET all the processes where this role is relaized in
+    ?role sio:SIO_000356 ?process.
+    # CHECK if one of these procceses of `rdf:type` medical diagnosis process
+    ?process rdf:type sio:SIO_001001.
+    # GET all the outputs of this process
+    ?process sio:SIO_000229 ?output.
+    # CHECK if one of these output(s) of `rdf:type` information content entity
+    ?output rdf:type sio:SIO_000015.
+    # GET disease linked to this output
+    ?output sio:SIO_000628 ?disease.
+    # CHECK if the diseases the person is diagonosis with is one of the diseases in our list
+    ?disease a ?ordo_class_iri
+} GROUP BY ?ordo_class_iri
+```
