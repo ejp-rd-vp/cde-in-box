@@ -23,7 +23,7 @@ mappings:
     - cde_personal_information-source
     s: this:individual_$(pid)_$(uniqid)#ID
     po:
-    - predicates: http://semanticscience.org/resource/has-value
+    - predicates: sio:SIO_000300
       objects:
         value: "$(pid)"
         datatype: xsd:string
@@ -34,13 +34,13 @@ mappings:
     po:
     - predicates: a
       objects:
-        value: http://semanticscience.org/resource/identifier
+        value: sio:SIO_000115
         type: iri
     - predicates: a
       objects:
-        value: http://semanticscience.org/resource/identifier
+        value: sio:SIO_000115
         type: iri
-    - predicates: http://semanticscience.org/resource/denotes
+    - predicates: sio:SIO_000020
       objects:
         value: this:individual_$(pid)_$(uniqid)#patientRole_age
         type: iri
@@ -51,13 +51,13 @@ mappings:
     po:
     - predicates: a
       objects:
-        value: http://semanticscience.org/resource/person
+        value: sio:SIO_000498
         type: iri
     - predicates: a
       objects:
-        value: http://semanticscience.org/resource/person
+        value: sio:SIO_000498
         type: iri
-    - predicates: http://semanticscience.org/resource/has-role
+    - predicates: sio:SIO_000228
       objects:
         value: this:individual_$(pid)_$(uniqid)#patientRole_age
         type: iri
@@ -72,7 +72,7 @@ mappings:
         type: iri
     - predicates: a
       objects:
-        value: http://semanticscience.org/resource/role
+        value: sio:SIO_000016
         type: iri
     - predicates: rdfs:label
       objects:
@@ -83,7 +83,7 @@ mappings:
     - cde_personal_information-source
     s: this:individual_$(pid)_$(uniqid)#ID
     po:
-    - predicates: http://semanticscience.org/resource/has-value
+    - predicates: sio:SIO_000300
       objects:
         value: "$(pid)"
         datatype: xsd:string
@@ -94,13 +94,13 @@ mappings:
     po:
     - predicates: a
       objects:
-        value: http://semanticscience.org/resource/identifier
+        value: sio:SIO_000115
         type: iri
     - predicates: a
       objects:
-        value: http://semanticscience.org/resource/identifier
+        value: sio:SIO_000115
         type: iri
-    - predicates: http://semanticscience.org/resource/denotes
+    - predicates: sio:SIO_000020
       objects:
         value: this:individual_$(pid)_$(uniqid)#patientRole_sex
         type: iri
@@ -111,13 +111,13 @@ mappings:
     po:
     - predicates: a
       objects:
-        value: http://semanticscience.org/resource/person
+        value: sio:SIO_000498
         type: iri
     - predicates: a
       objects:
-        value: http://semanticscience.org/resource/person
+        value: sio:SIO_000498
         type: iri
-    - predicates: http://semanticscience.org/resource/has-role
+    - predicates: sio:SIO_000228
       objects:
         value: this:individual_$(pid)_$(uniqid)#patientRole_sex
         type: iri
@@ -132,7 +132,7 @@ mappings:
         type: iri
     - predicates: a
       objects:
-        value: http://semanticscience.org/resource/role
+        value: sio:SIO_000016
         type: iri
     - predicates: rdfs:label
       objects:
@@ -143,7 +143,7 @@ mappings:
     - cde_personal_information-source
     s: this:individual_$(pid)_$(uniqid)#patientRole_age
     po:
-    - predicates: http://semanticscience.org/resource/is-realized-in
+    - predicates: sio:SIO_000356
       objects:
         value: this:individual_$(pid)_$(uniqid)_process#age_measuring_procedure
         type: iri
@@ -154,11 +154,7 @@ mappings:
     po:
     - predicates: rdf:type
       objects:
-        value: http://semanticscience.org/resource/process
-        type: iri
-    - predicates: rdf:type
-      objects:
-        value: http://semanticscience.org/resource/process
+        value: sio:SIO_000006
         type: iri
     - predicates: rdfs:label
       objects:
@@ -169,7 +165,7 @@ mappings:
     - cde_personal_information-source
     s: this:individual_$(pid)_$(uniqid)#patientRole_sex
     po:
-    - predicates: http://semanticscience.org/resource/is-realized-in
+    - predicates: sio:SIO_000356
       objects:
         value: this:individual_$(pid)_$(uniqid)_process#sex_measuring_procedure
         type: iri
@@ -180,11 +176,7 @@ mappings:
     po:
     - predicates: rdf:type
       objects:
-        value: http://semanticscience.org/resource/process
-        type: iri
-    - predicates: rdf:type
-      objects:
-        value: http://semanticscience.org/resource/process
+        value: sio:SIO_000006
         type: iri
     - predicates: rdfs:label
       objects:
@@ -195,7 +187,7 @@ mappings:
     - cde_personal_information-source
     s: this:individual_$(pid)_$(uniqid)_process#age_measuring_procedure
     po:
-    - predicates: http://semanticscience.org/resource/has-output
+    - predicates: sio:SIO_000229
       objects:
         value: this:individual_$(pid)_$(uniqid)#age_measuring_procedure_Output
         type: iri
@@ -206,7 +198,7 @@ mappings:
     po:
     - predicates: rdf:type
       objects:
-        value: http://semanticscience.org/resource/information-content-entity
+        value: sio:SIO_000015
         type: iri
   age_measuring_procedure_Output_type_annotation:
     sources:
@@ -215,7 +207,7 @@ mappings:
     po:
     - predicates: rdf:type
       objects:
-        value: http://semanticscience.org/resource/realizable-entity
+        value: sio:SIO_000340
         type: iri
   age_measuring_procedure_Output_type_label_annotation:
     sources:
@@ -231,7 +223,7 @@ mappings:
     - cde_personal_information-source
     s: this:individual_$(pid)_$(uniqid)#age_measuring_procedure_Output
     po:
-    - predicates: http://semanticscience.org/resource/has-value
+    - predicates: sio:SIO_000300
       objects:
         value: "$(birthdate)"
         datatype: xsd:dateTime
@@ -240,7 +232,7 @@ mappings:
     - cde_personal_information-source
     s: this:individual_$(pid)_$(uniqid)_process#sex_measuring_procedure
     po:
-    - predicates: http://semanticscience.org/resource/has-output
+    - predicates: sio:SIO_000229
       objects:
         value: this:individual_$(pid)_$(uniqid)#sex_measuring_procedure_Output
         type: iri
@@ -251,7 +243,7 @@ mappings:
     po:
     - predicates: rdf:type
       objects:
-        value: http://semanticscience.org/resource/information-content-entity
+        value: sio:SIO_000015
         type: iri
   sex_measuring_procedure_Output_type_annotation:
     sources:
@@ -260,7 +252,7 @@ mappings:
     po:
     - predicates: rdf:type
       objects:
-        value: http://semanticscience.org/resource/realizable-entity
+        value: sio:SIO_000340
         type: iri
   sex_measuring_procedure_Output_type_label_annotation:
     sources:
@@ -276,7 +268,7 @@ mappings:
     - cde_personal_information-source
     s: this:individual_$(pid)_$(uniqid)#sex_measuring_procedure_Output
     po:
-    - predicates: http://semanticscience.org/resource/has-value
+    - predicates: sio:SIO_000300
       objects:
         value: "$(genderLabel)"
         datatype: xsd:string
@@ -285,7 +277,7 @@ mappings:
     - cde_personal_information-source
     s: this:individual_$(pid)_$(uniqid)#age_measuring_procedure_Output
     po:
-    - predicates: http://semanticscience.org/resource/refers-to
+    - predicates: sio:SIO_000628
       objects:
         value: this:individual_$(pid)_$(uniqid)#birthdateQualityURI_TypedAttributeNode
         type: iri
@@ -303,7 +295,7 @@ mappings:
     - cde_personal_information-source
     s: this:individual_$(pid)_$(uniqid)#sex_measuring_procedure_Output
     po:
-    - predicates: http://semanticscience.org/resource/refers-to
+    - predicates: sio:SIO_000628
       objects:
         value: this:individual_$(pid)_$(uniqid)#genderURI_TypedAttributeNode
         type: iri
@@ -321,7 +313,7 @@ mappings:
     - cde_personal_information-source
     s: this:individual_$(pid)#Person
     po:
-    - predicates: http://semanticscience.org/resource/SIO_000008
+    - predicates: sio:SIO_000008
       objects:
         value: this:individual_$(pid)_$(uniqid)#birthdateQualityURI_TypedAttributeNode
         type: iri
@@ -330,7 +322,7 @@ mappings:
     - cde_personal_information-source
     s: this:individual_$(pid)#Person
     po:
-    - predicates: http://semanticscience.org/resource/SIO_000008
+    - predicates: sio:SIO_000008
       objects:
         value: this:individual_$(pid)_$(uniqid)#genderURI_TypedAttributeNode
         type: iri
