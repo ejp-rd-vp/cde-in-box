@@ -49,10 +49,10 @@ def main(graphdb_url, repo_id, file_path, content_type):
 
 
 print("Triple loader script started")
-graphdb_url = sys.argv[1]
-repo_id = sys.argv[2]
-file_path = sys.argv[3]
-content_type = sys.argv[4]
+graphdb_url = os.environ['GRAPH_DB_URL']
+repo_id = os.environ['REPO_ID']
+file_path = os.environ['FILE_PATH']
+content_type = os.environ['CONTENT_TYPE']
 if graphdb_url.endswith("/"):
     graphdb_url = graphdb_url[:-1]
 print(graphdb_url)
