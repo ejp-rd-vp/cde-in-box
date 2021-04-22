@@ -2,10 +2,11 @@ import requests
 import sys
 import chevron
 import time
+import os
 from requests.auth import HTTPBasicAuth
 
-GRAPHDB_ADMIN_USER = "admin"
-GRAPHDB_ADMIN_PASSWORD = "root"
+GRAPHDB_ADMIN_USER = os.environ['GRAPH_DB_ADMIN_USERNAME']
+GRAPHDB_ADMIN_PASSWORD = os.environ['GRAPH_DB_ADMIN_PASSWORD']
 
 def check_triple_store_status(graphdb_url):
     url = graphdb_url + "/rest/repositories"
@@ -87,7 +88,7 @@ def main(graphdb_url):
     secure_graphdb(graphdb_url)
 
 print("Repository manager script started")
-graphdb_url = sys.argv[1]
+graphdb_url = os.environ['GRAPH_DB_URL']
 if graphdb_url.endswith("/"):
     graphdb_url = graphdb_url[:-1]
 print(graphdb_url)

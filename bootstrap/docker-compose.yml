@@ -25,9 +25,8 @@ services:
       - graphdb
     environment:
       - "GRAPH_DB_URL=http://graphdb:7200"
-    volumes:
-      - ./mongo/data:/data/db
-      - ./mongo/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+      - "GRAPH_DB_ADMIN_USERNAME=admin"
+      - "GRAPH_DB_ADMIN_PASSWORD=root"
     networks:
       - graphdb_net
    
