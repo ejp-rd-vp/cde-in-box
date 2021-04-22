@@ -36,3 +36,7 @@ cde-ready-to-go/data/triplesstats.csv
 cde-ready-to-go/triple-loader/.idea/
 
 cde-ready-to-go/triple-loader/venv/
+
+metadata/bootstrap_graph_db_repo_manager.tar
+
+metadata/bootstrap_graphdb.tar

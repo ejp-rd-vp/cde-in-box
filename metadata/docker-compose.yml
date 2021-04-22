@@ -6,6 +6,8 @@ services:
     image: fairdata/fairdatapoint:1.8.0
     volumes:
       - ./fdp/application.yml:/fdp/application.yml:ro
+    depends_on:
+      - mongo
     networks:
       - default
       - bootstrap_graphdb_net    
