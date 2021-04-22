@@ -2,7 +2,8 @@
 `CDE in a box` is a collection of software applications which enables creation, storing and publishing of "Common Data Elements" according to the [CDE semantic model]​(https://github.com/ejp-rd-vp/CDE-semantic-model).
 
 ### Requirements
-In order to use cde-in-box you `have to` meet following requirements.
+In order to use the cde-in-box solution you `have to` meet following requirements.
+
 
 **User requirements (Person who is deploying this solution)**​
 
@@ -10,10 +11,9 @@ In order to use cde-in-box you `have to` meet following requirements.
 * Basic GitHub knowledge​
 * Awareness of CDE semantic model
 
-**System requirements​ (Machine where this solution is deployed)**
+**System requirements​ (Machine where this solution is being deployed)**
 
 * Docker engine​
-
 * Docker-compose application​
 
 ### Softwares used in CDE in a box
