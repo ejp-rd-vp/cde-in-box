@@ -1,5 +1,5 @@
 # cde-in-box
-`CDE in a box` is a collection of software applications which enables creation, storing and publishing of "Common Data Elements" according to the [CDE semantic model]​(https://github.com/ejp-rd-vp/CDE-semantic-model).
+`CDE in a box` is a collection of software applications which enables creation, storing and publishing of "Common Data Elements" according to the [CDE semantic model](https://github.com/ejp-rd-vp/CDE-semantic-model).
 
 ## Requirements
 In order to use the cde-in-box solution you `have to` meet following requirements.
