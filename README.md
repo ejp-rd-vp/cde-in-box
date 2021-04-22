@@ -3,8 +3,8 @@
 
 ### Requirements
 In order to use the cde-in-box solution you `have to` meet following requirements.
-</p>
-**User requirements​ (Person who is deploying this solution)**
+
+**User requirements (Person who is deploying this solution)**
 
 * Basic knowledge on Docker​
 * Basic GitHub knowledge​
