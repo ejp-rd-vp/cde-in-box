@@ -166,6 +166,6 @@ call the url:  http://localhost:4567 to trigger the transformation of each CSV f
 
 **There is sample data in the "sample_data" folder that can be used to test your installation.**
 
-### To learn more about YARRRML
+### How to modify semantic model in data transformation service
 
 YARRRML is one the core technology which has been used in our data transformation service. If you like to extend the CDE semantic model or add other semantic model to describe your data then, you have to provide custom YARRRML templates to the data transformation service. To learn more about building custom YARRRML templates please try [matey webapp](https://rml.io/yarrrml/matey/).
