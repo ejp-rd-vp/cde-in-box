@@ -175,7 +175,7 @@ Put an appropriately columned `XXXX.csv` into the `cde-in-box/cde-ready-to-go/da
 
 The `YARRRML` templates are always loaded from GitHub automatically on step 5, so they stay up-to-date as we change the models in EJP-RD.
 
-Make sure the `YARRRML` templates files are matching your `CSV` files names `XXXX_yarrrml_template.yaml` into the `cde-in-box/cde-ready-to-go/config` folder. Please look into [this](https://github.com/ejp-rd-vp/CDE-semantic-model-implementations/tree/master/YARRRML_Transform_Templates) github repository for CDEs `YARRRML` templates.
+Make sure the `YARRRML` templates files are matching your `CSV` files names `XXXX_yarrrml_template.yaml` and are in the `cde-in-box/cde-ready-to-go/config` folder. Please look into [this](https://github.com/ejp-rd-vp/CDE-semantic-model-implementations/tree/master/YARRRML_Transform_Templates) github repository for CDEs `YARRRML` templates.
 
 
 **Step 5:**  Executing transformations
