@@ -178,7 +178,7 @@ The `YARRRML` templates are always loaded from GitHub automatically on step 5, s
 Make sure the `YARRRML` templates files are matching your `CSV` files names `XXXX_yarrrml_template.yaml` into the `cde-in-box/cde-ready-to-go/config` folder. Please look into [this](https://github.com/ejp-rd-vp/CDE-semantic-model-implementations/tree/master/YARRRML_Transform_Templates) github repository for CDEs `YARRRML` templates.
 
 
-**Step 3:**  Executing transformations
+**Step 5:**  Executing transformations
 
 Call the url:  http://localhost:4567 or http://SERVER-IP:4567  to trigger the transformation of each CSV file, and auto-load into graphDB (this will over-write what is currrently loaded!  We will make this behaviour more flexible later)
 **Note:** If you deploy `CDE in a box` solution in your laptop then check only for **localhost** url.
