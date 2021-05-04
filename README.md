@@ -129,6 +129,10 @@ In order to add content to the FAIR Data Point you need credentials with write a
 
 ### Configuring data transformation services
 
+#### Preparing input data
+
+The transformation services take `CSV` as input files. We provide `CSV` template for each CDE modules. To learn more about these `CSV` templates please click [here](https://github.com/ejp-rd-vp/CDE-semantic-model-implementations/tree/master/YARRRML_Transform_Templates).
+
 #### Configuring configuration and data folders 
 
 **Step 1:** Create the following folder structure, relative to where you plan to keep your pre and post-transformed data:
