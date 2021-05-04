@@ -151,34 +151,44 @@ Make sure the following folder structure, relative to where you plan to keep you
         ./data/mydataX.csv  (input csv files, e.g. "height.csv")
         ./data/mydataY.csv...
         ./data/triples/  (output FAIR data ends up here)
-        ./config/
-        ./config/XXXX_yarrrml_template.yaml (XXXX is a one-word tag of the "type" of data, e.g. "height")
+        ./config/   (this is the folder where yarrrml templates will be automatically loaded from the EJP repository)
 ``` 
+**Step 2:**  Edit the .env file
 
+the .env file will create the values for the environment variables in the docker compose file.  The first of these `baseURI` is the base for all URLs that represent your transformed data.  This should be set to something like:
 
-**Step 2:**  Running data transformation services
+`http://my.database.org/my_rd_data/`
+
+this will result in Triple that look like this:
+
+`<http://my.database.org/my_rd_data/person_123345_asdssaewe#ID>  <sio:has-value>  <"123345">`
+
+optimally, these URLs will resolve...
+
+**Step 3:**  Running data transformation services
 
 Once you have done the above configurations you can run `data transformation services` setup by running `docker-compose.yml` file in `cde-in-box/cde-ready-to-go` directory.
-**THE docker-compose IN THE SAME FOLDER THAT CONTAINS THE ./data/triples and ./config and subfolders**
+
+**THE docker-compose MUST BE RUN IN THE SAME FOLDER THAT CONTAINS THE ./data/triples and ./config and subfolders**
 
 ```sh
 docker-compose up -d
 ```
 
 
-**Step 3:** Input CSV files
+**Step 4:** Input CSV files
 
 Put an appropriately columned `XXXX.csv` into the `cde-in-box/cde-ready-to-go/data`. Please look into [this](https://github.com/ejp-rd-vp/CDE-semantic-model-implementations/tree/master/YARRRML_Transform_Templates) github repository for examples of CDEs `CSV` files.
 
 
-**Step 4:** Input YARRRML templates
+**Step 5:** Input YARRRML templates
 
 The `YARRRML` templates are always loaded from GitHub automatically on step 5, so they stay up-to-date as we change the models in EJP-RD.
 
 Make sure the `YARRRML` templates files are matching your `CSV` files names `XXXX_yarrrml_template.yaml` and are in the `cde-in-box/cde-ready-to-go/config` folder. Please look into [this](https://github.com/ejp-rd-vp/CDE-semantic-model-implementations/tree/master/YARRRML_Transform_Templates) github repository for CDEs `YARRRML` templates.
 
 
-**Step 5:**  Executing transformations
+**Step 6:**  Executing transformations
 
 Call the url:  http://localhost:4567 or http://SERVER-IP:4567  to trigger the transformation of each CSV file, and auto-load into graphDB (this will over-write what is currrently loaded!  We will make this behaviour more flexible later)
 **Note:** If you deploy `CDE in a box` solution in your laptop then check only for **localhost** url.
