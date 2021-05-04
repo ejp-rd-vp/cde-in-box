@@ -22,6 +22,8 @@ services:
       - ./fdp-client/variables.scss:/src/scss/custom/_variables.scss:ro
       - ./fdp-client/assets:/usr/share/nginx/html/assets:ro
       - ./fdp-client/favicon.ico:/usr/share/nginx/html/favicon.ico:ro
+    depends_on:
+      - fdp
     ports:
       - 8080:80
     networks:
