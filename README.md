@@ -151,9 +151,10 @@ The transformation services take `CSV` as input files. We provide `CSV` and `YAR
         ./config/XXXX_yarrrml_template.yaml (XXXX is a one-word tag of the "type" of data, e.g. "height")
 ```
 
+**Step 2:**
+Please your input `CSV` under `cde-ready-to-go/data` directory. Please look into [this] (https://github.com/ejp-rd-vp/CDE-semantic-model-implementations/tree/master/YARRRML_Transform_Templates) github to prepare your input `CSV` file.
 
-
-**Step 2:**  Running data transformation services
+**Step 3:**  Running data transformation services
 
 Once you have done the above configurations you can run `data transformation services` setup by running ``docker-compose.yml` file in `cde-in-box/cde-ready-to-go` directory.
 **IN THE FOLDER THAT CONTAINS THE ./data/triples and ./config and subfolders**
@@ -164,7 +165,7 @@ docker-compose up -d
 
 
 
-**Step 3:**  Executing transformations
+**Step 4:**  Executing transformations
 
 Put an appropriately columned XXXX.csv into the ./data folder
 
