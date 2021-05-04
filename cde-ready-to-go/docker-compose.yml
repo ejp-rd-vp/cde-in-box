@@ -9,6 +9,10 @@ services:
       - rdfizer
     ports:
       - 4567:4567
+    environment:
+      GraphDB_User: ${GraphDB_User}
+      GraphDB_Pass: ${GraphDB_Pass}
+      baseURI: ${baseURI}
     volumes:
         - ./data:/data
         - ./config:/config
@@ -39,19 +43,6 @@ services:
       - default
       - bootstrap_graphdb_net
       
-  triple_loader: 
-    build: ./triple-loader
-    volumes:
-        - ./data:/data
-    environment:
-      - "GRAPH_DB_URL=http://graphdb:7200"
-      - "REPO_ID=cde"
-      - "FILE_PATH=/data/triples/concatenated.nt"
-      - "CONTENT_TYPE=application/n-triples"
-    networks:
-      - default
-      - bootstrap_graphdb_net 
-        
 # Define networks here
 networks:
   bootstrap_graphdb_net:
