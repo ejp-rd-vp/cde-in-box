@@ -85,6 +85,8 @@ docker-compose up -d
 
 If the deployment is successful then you can access the graphDB by visiting the following URL.
 
+**Note:** If you deploy `CDE in a box` solution in your laptop then check only for **local deployment** url.
+
 | Service name | Local deployment | Production deployment |
 | --- | --- | --- |
 | GraphDB | [http://localhost:7200](http://localhost:7200/) | http://SERVER-IP:7200 |
@@ -116,6 +118,8 @@ docker-compose up -d
 ```
 
 If the deployment is successful then you can access the FAIR Data Point by visiting the following URL.
+
+**Note:** If you deploy `CDE in a box` solution in your laptop then check only for **local deployment** url.
 
 | Service name | Local deployment | Production deployment |
 | --- | --- | --- |
@@ -166,7 +170,9 @@ Put an appropriately columned XXXX.csv into the ./data folder
 
 Put a matching YARRRML template file called XXXX_yarrrml_template.yaml into the ./config folder
 
-call the url:  http://localhost:4567 to trigger the transformation of each CSV file, and auto-load into graphDB (this will over-write what is currrently loaded!  We will make this behaviour more flexible later)
+**Note:** If you deploy `CDE in a box` solution in your laptop then check only for **localhost** url.
+
+call the url:  http://localhost:4567 or http://SERVER-IP:4567  to trigger the transformation of each CSV file, and auto-load into graphDB (this will over-write what is currrently loaded!  We will make this behaviour more flexible later)
 
 **There is sample data in the "sample_data" folder that can be used to test your installation.**
 
