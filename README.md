@@ -152,7 +152,7 @@ The transformation services take `CSV` as input files. We provide `CSV` and `YAR
 ```
 
 **Step 2:**
-Please your input `CSV` under `cde-ready-to-go/data` directory. Please look into [this](https://github.com/ejp-rd-vp/CDE-semantic-model-implementations/tree/master/YARRRML_Transform_Templates) github to prepare your input `CSV` file.
+Please add your input `CSV` file under `cde-ready-to-go/data` directory. Please look into [this](https://github.com/ejp-rd-vp/CDE-semantic-model-implementations/tree/master/YARRRML_Transform_Templates) github repository to prepare your input `CSV` file.
 
 **Step 3:**  Running data transformation services
 
