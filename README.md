@@ -103,7 +103,7 @@ The `docker-compose.yml` file in directory `cde-in-box/metadata` will setup up `
 
 
 
-**Step 1:** Before you run metadata services make sure that graphDB triple store is up running. You can check by going to this url for local deployment (in your laptop) `http://localhost:7200` for production deployment (in your server) `http:server_ip:7200`
+**Step 1:** Before you run metadata services make sure that graphDB triple store is up running. You can check by going to following url. For local deployment (in your laptop) `http://localhost:7200` for production deployment (in your server) `http:server_ip:7200`
 
 
 
