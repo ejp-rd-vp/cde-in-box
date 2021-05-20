@@ -32,7 +32,7 @@ services:
       - bootstrap_graphdb_net  
   
   rdfizer: 
-    image: markw/sdmrdfizer_ejp:0.1.0
+    image: markw/sdmrdfizer_ejp:0.3.0
     container_name: rdfizer
     ports:
       - "4000:4000"
