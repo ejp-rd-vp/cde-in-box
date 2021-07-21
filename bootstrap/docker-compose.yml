@@ -3,12 +3,13 @@ version: '3'
 services:
   #  Graph DB service. BEFORE you start running docker-compose file please make sure that you have downloaded free edition of graphDB zip files	
   graphdb:
-    build:
-      context: ./graph-db
-      dockerfile: Dockerfile        
-      args:
-        version: 9.7.0
-        edition: free
+#    build:
+#      context: ./graph-db
+#      dockerfile: Dockerfile        
+#      args:
+#        version: 9.7.0
+#        edition: free
+    image: graphdb:local
     restart: always
     hostname: graphdb
     ports:

@@ -8,7 +8,7 @@ prefixes:
   vocab: https://ejp-rd.eu/vocab/
   pico: http://data.cochrane.org/ontologies/pico/
   ndfrt: http://purl.bioontology.org/ontology/NDFRT/
-  this: |||baseURI|||
+  this: |||BASE|||
 sources:
   patient_height_experimental-source:
     access: "|||DATA|||"
