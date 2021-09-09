@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk11:alpine
+FROM openjdk:18-alpine
 
 # Build time arguments
 ARG version=9.7.0
