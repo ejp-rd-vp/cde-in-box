@@ -7,8 +7,9 @@ services:
       context: ./graph-db
       dockerfile: Dockerfile        
       args:
-        version: 9.7.0
+        version: 9.8.1
         edition: free
+    image: graphdb:local
     restart: always
     hostname: graphdb
     ports:

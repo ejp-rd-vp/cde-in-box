@@ -27,6 +27,8 @@ services:
       - "3000:3000"
     volumes:
       - ./data:/data
+    environment:
+      baseURI: ${baseURI}
     networks:
       - default
       - bootstrap_graphdb_net  

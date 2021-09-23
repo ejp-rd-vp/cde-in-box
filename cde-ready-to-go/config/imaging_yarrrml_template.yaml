@@ -222,7 +222,7 @@ mappings:
       objects:
         value: "$(comments)"
         datatype: xsd:string
-  1625730495883985_output_custom_annotation:
+  16323907631211543_output_custom_annotation:
     sources:
     - imaging-source
     s: this:individual_$(pid)_$(uniqid)#some_imaging_process_Output
