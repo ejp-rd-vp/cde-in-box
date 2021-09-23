@@ -97,7 +97,7 @@ mappings:
         type: iri
     - predicates: rdf:type
       objects:
-        value: http://semanticscience.org/resource/process
+        value: http://semanticscience.org/resource/SIO_001052
         type: iri
     - predicates: rdfs:label
       objects:
@@ -123,33 +123,20 @@ mappings:
         type: iri
     - predicates: rdf:type
       objects:
-        value: http://semanticscience.org/resource/process
+        value: http://semanticscience.org/resource/SIO_001052
         type: iri
     - predicates: rdfs:label
       objects:
         value: death information recording process
         datatype: xsd:string
-  patient_death_information_process_annotation_start:
+  longitudinal_information_gathering_process_diseaseX_has_part_patient_status:
     sources:
     - cde_patient_status-source
-    s: this:individual_$(pid)_$(uniqid)_process#patient_death_information
+    s: this:individual_$(pid)_process#longitudinal_information_gathering_process_diseaseX
     po:
-    - predicates: http://semanticscience.org/resource/has-start-time
+    - predicates: http://semanticscience.org/resource/has-part
       objects:
-        value: this:individual_$(pid)_$(uniqid)_process#patient_death_information_startdate
-        type: iri
-  patient_death_information_process_annotation_start_value:
-    sources:
-    - cde_patient_status-source
-    s: this:individual_$(pid)_$(uniqid)_process#patient_death_information_startdate
-    po:
-    - predicates: http://semanticscience.org/resource/has-value
-      objects:
-        value: "$(date)"
-        datatype: xsd:date
-    - predicates: rdf:type
-      objects:
-        value: http://semanticscience.org/resource/start-date
+        value: this:individual_$(pid)_$(uniqid)_process#patient_status
         type: iri
   patient_status_process_has_output:
     sources:
@@ -323,7 +310,7 @@ mappings:
         type: iri
     - predicates: rdf:type
       objects:
-        value: obo:NCIT_C70810
+        value: http://purl.obolibrary.org/obo/NCIT_C70810
         type: iri
   inout_from_patient_death_information_refers_to_concept_death_information_label:
     sources:

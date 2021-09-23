@@ -325,7 +325,7 @@ mappings:
         type: iri
     - predicates: rdf:type
       objects:
-        value: obo:NCIT_C28421
+        value: http://purl.obolibrary.org/obo/NCIT_C28421
         type: iri
   inout_from_sex_measuring_procedure_refers_to_concept_sexAttribute_label:
     sources:
@@ -365,7 +365,7 @@ mappings:
         type: iri
     - predicates: rdf:type
       objects:
-        value: obo:NCIT_C68615
+        value: http://purl.obolibrary.org/obo/NCIT_C68615
         type: iri
   inout_from_age_measuring_procedure_refers_to_concept_ageAttribute_label:
     sources:

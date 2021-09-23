@@ -241,7 +241,7 @@ mappings:
     po:
     - predicates: rdfs:label
       objects:
-        value: "'age' at onset"
+        value: date of onset (in official CDE this is age of onset)
         datatype: xsd:string
   patientRole_symptom_onset_process_Output_value_annotation:
     sources:
@@ -252,6 +252,19 @@ mappings:
       objects:
         value: "$(onset_date)"
         datatype: xsd:date
+  patientRole_symptom_onset_process_output_annotation_timeinstant:
+    sources:
+    - cde_patient_disease_history-source
+    s: this:individual_$(pid)_$(uniqid)#patientRole_symptom_onset_process_Output
+    po:
+    - predicates: http://semanticscience.org/resource/has-value
+      objects:
+        value: "$(onset_date)"
+        datatype: xsd:date
+    - predicates: rdf:type
+      objects:
+        value: http://semanticscience.org/resource/time-instant
+        type: iri
   patientRole_diagnosis_date_process_process_has_output:
     sources:
     - cde_patient_disease_history-source
@@ -297,6 +310,19 @@ mappings:
       objects:
         value: "$(diagnosis_date)"
         datatype: xsd:date
+  patientRole_diagnosis_date_process_output_annotation_timeinstant:
+    sources:
+    - cde_patient_disease_history-source
+    s: this:individual_$(pid)_$(uniqid)#patientRole_diagnosis_date_process_Output
+    po:
+    - predicates: http://semanticscience.org/resource/has-value
+      objects:
+        value: "$(diagnosis_date)"
+        datatype: xsd:date
+    - predicates: rdf:type
+      objects:
+        value: http://semanticscience.org/resource/time-instant
+        type: iri
   inout_from_patientRole_symptom_onset_process_refers_to_concepts:
     sources:
     - cde_patient_disease_history-source
