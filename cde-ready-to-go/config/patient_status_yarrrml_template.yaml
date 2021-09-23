@@ -101,7 +101,7 @@ mappings:
         type: iri
     - predicates: rdfs:label
       objects:
-        value: status process
+        value: status recording process
         datatype: xsd:string
   patientRole_status_realized_patient_death_information:
     sources:
@@ -129,6 +129,28 @@ mappings:
       objects:
         value: death information recording process
         datatype: xsd:string
+  patient_death_information_process_annotation_start:
+    sources:
+    - cde_patient_status-source
+    s: this:individual_$(pid)_$(uniqid)_process#patient_death_information
+    po:
+    - predicates: http://semanticscience.org/resource/has-start-time
+      objects:
+        value: this:individual_$(pid)_$(uniqid)_process#patient_death_information_startdate
+        type: iri
+  patient_death_information_process_annotation_start_value:
+    sources:
+    - cde_patient_status-source
+    s: this:individual_$(pid)_$(uniqid)_process#patient_death_information_startdate
+    po:
+    - predicates: http://semanticscience.org/resource/has-value
+      objects:
+        value: "$(date)"
+        datatype: xsd:date
+    - predicates: rdf:type
+      objects:
+        value: http://semanticscience.org/resource/start-date
+        type: iri
   patient_status_process_has_output:
     sources:
     - cde_patient_status-source
@@ -258,16 +280,20 @@ mappings:
     - predicates: http://semanticscience.org/resource/has-value
       objects:
         value: "$(death_date)"
-        datatype: xsd:string
-  patient_death_information_output_annotation_end:
+        datatype: xsd:date
+  patient_death_information_output_annotation_timeinstant:
     sources:
     - cde_patient_status-source
     s: this:individual_$(pid)_$(uniqid)#patient_death_information_Output
     po:
-    - predicates: http://semanticscience.org/resource/end-date
+    - predicates: http://semanticscience.org/resource/has-value
       objects:
         value: "$(death_date)"
         datatype: xsd:date
+    - predicates: rdf:type
+      objects:
+        value: http://semanticscience.org/resource/time-instant
+        type: iri
   inout_from_patient_death_information_refers_to_concepts:
     sources:
     - cde_patient_status-source
@@ -299,3 +325,12 @@ mappings:
       objects:
         value: obo:NCIT_C70810
         type: iri
+  inout_from_patient_death_information_refers_to_concept_death_information_label:
+    sources:
+    - cde_patient_status-source
+    s: this:individual_$(pid)_$(uniqid)#death_information_TypedAttributeNode
+    po:
+    - predicates: rdfs:label
+      objects:
+        value: Date of death
+        datatype: xsd:string

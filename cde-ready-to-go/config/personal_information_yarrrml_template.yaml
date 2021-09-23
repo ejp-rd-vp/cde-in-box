@@ -233,7 +233,20 @@ mappings:
     - predicates: http://semanticscience.org/resource/has-value
       objects:
         value: "$(birthdate)"
-        datatype: xsd:dateTime
+        datatype: xsd:date
+  age_measuring_procedure_output_annotation_timeinstant:
+    sources:
+    - cde_personal_information-source
+    s: this:individual_$(pid)_$(uniqid)#age_measuring_procedure_Output
+    po:
+    - predicates: http://semanticscience.org/resource/has-value
+      objects:
+        value: "$(birthdate)"
+        datatype: xsd:date
+    - predicates: rdf:type
+      objects:
+        value: http://semanticscience.org/resource/time-instant
+        type: iri
   sex_measuring_procedure_process_has_output:
     sources:
     - cde_personal_information-source

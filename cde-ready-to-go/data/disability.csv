@@ -1,0 +1,4 @@
+pid,uniqid,test_uri,test_name,test_date,score
+uid_000001,12345,"http://purl.obolibrary.org/obo/NCIT_C121269","Behavior assessment system for children, second edition",2002-01-29,43
+uid_000002,66425,"http://purl.obolibrary.org/obo/NCIT_C107391","Edmonton Symptom Assessment System",2019-11-12,12
+uid_000003,99836,"http://purl.obolibrary.org/obo/NCIT_C120147","BPI Pain Interference Likert Scale",2009-08-19,103

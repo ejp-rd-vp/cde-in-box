@@ -108,19 +108,32 @@ mappings:
     - cde_patient_care_pathway-source
     s: this:individual_$(pid)_$(uniqid)_process#patientRole_care_pathway_first_contact_process
     po:
-    - predicates: http://semanticscience.org/resource/start-date
+    - predicates: http://semanticscience.org/resource/has-start-time
+      objects:
+        value: this:individual_$(pid)_$(uniqid)_process#patientRole_care_pathway_first_contact_process_startdate
+        type: iri
+  patientRole_care_pathway_first_contact_process_process_annotation_start_value:
+    sources:
+    - cde_patient_care_pathway-source
+    s: this:individual_$(pid)_$(uniqid)_process#patientRole_care_pathway_first_contact_process_startdate
+    po:
+    - predicates: http://semanticscience.org/resource/has-value
       objects:
         value: "$(first_contact_date)"
         datatype: xsd:date
-  16202900787759852_process_custom_annotation:
+    - predicates: rdf:type
+      objects:
+        value: http://semanticscience.org/resource/start-date
+        type: iri
+  1625473018940807_process_custom_annotation:
     sources:
     - cde_patient_care_pathway-source
     s: this:individual_$(pid)_$(uniqid)_process#patientRole_care_pathway_first_contact_process
     po:
-    - predicates: http://semanticscience.org/resource/SIO_000669
+    - predicates: rdf:type
       objects:
-        value: "$(first_contact_date)"
-        datatype: xsd:date
+        value: http://purl.obolibrary.org/obo/NCIT_C16205
+        type: iri
   longitudinal_information_gathering_process_diseaseX_has_part_patientRole_care_pathway_first_contact_process:
     sources:
     - cde_patient_care_pathway-source

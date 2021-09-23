@@ -108,10 +108,23 @@ mappings:
     - cde_patient_consent-source
     s: this:individual_$(pid)_$(uniqid)_process#patient_consenting
     po:
-    - predicates: http://semanticscience.org/resource/start-date
+    - predicates: http://semanticscience.org/resource/has-start-time
+      objects:
+        value: this:individual_$(pid)_$(uniqid)_process#patient_consenting_startdate
+        type: iri
+  patient_consenting_process_annotation_start_value:
+    sources:
+    - cde_patient_consent-source
+    s: this:individual_$(pid)_$(uniqid)_process#patient_consenting_startdate
+    po:
+    - predicates: http://semanticscience.org/resource/has-value
       objects:
         value: "$(date)"
         datatype: xsd:date
+    - predicates: rdf:type
+      objects:
+        value: http://semanticscience.org/resource/start-date
+        type: iri
   patient_consenting_has_input_consent_document:
     sources:
     - cde_patient_consent-source
@@ -192,15 +205,6 @@ mappings:
       objects:
         value: "$(result_label)"
         datatype: xsd:string
-  patient_consenting_output_annotation_start:
-    sources:
-    - cde_patient_consent-source
-    s: this:individual_$(pid)_$(uniqid)#patient_consenting_Output
-    po:
-    - predicates: http://semanticscience.org/resource/start-date
-      objects:
-        value: "$(date)"
-        datatype: xsd:date
   inout_from_patient_consenting_refers_to_concepts:
     sources:
     - cde_patient_consent-source
@@ -232,3 +236,12 @@ mappings:
       objects:
         value: "$(result_uri)"
         type: iri
+  inout_from_patient_consenting_refers_to_concept_consent_attribute_label:
+    sources:
+    - cde_patient_consent-source
+    s: this:individual_$(pid)_$(uniqid)#consent_attribute_TypedAttributeNode
+    po:
+    - predicates: rdfs:label
+      objects:
+        value: "$(result_label)"
+        datatype: xsd:string

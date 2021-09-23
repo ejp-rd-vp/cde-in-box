@@ -103,10 +103,50 @@ mappings:
       objects:
         value: comparative phenotypic assessment
         datatype: xsd:string
-  longitudinal_information_gathering_process_has_part_patientRole_phenotyping_process:
+  patientRole_phenotyping_process_process_annotation_start:
     sources:
     - cde_patient_phenotyping-source
-    s: this:individual_$(pid)_process#longitudinal_information_gathering_process
+    s: this:individual_$(pid)_$(uniqid)_process#patientRole_phenotyping_process
+    po:
+    - predicates: http://semanticscience.org/resource/has-start-time
+      objects:
+        value: this:individual_$(pid)_$(uniqid)_process#patientRole_phenotyping_process_startdate
+        type: iri
+  patientRole_phenotyping_process_process_annotation_start_value:
+    sources:
+    - cde_patient_phenotyping-source
+    s: this:individual_$(pid)_$(uniqid)_process#patientRole_phenotyping_process_startdate
+    po:
+    - predicates: http://semanticscience.org/resource/has-value
+      objects:
+        value: "$(date)"
+        datatype: xsd:date
+    - predicates: rdf:type
+      objects:
+        value: http://semanticscience.org/resource/start-date
+        type: iri
+  16256595626820688_process_custom_annotation:
+    sources:
+    - cde_patient_phenotyping-source
+    s: this:individual_$(pid)_$(uniqid)_process#patientRole_phenotyping_process
+    po:
+    - predicates: rdf:type
+      objects:
+        value: http://purl.obolibrary.org/obo/NCIT_C16205
+        type: iri
+  16256595626821606_process_custom_annotation:
+    sources:
+    - cde_patient_phenotyping-source
+    s: this:individual_$(pid)_$(uniqid)_process#patientRole_phenotyping_process
+    po:
+    - predicates: rdf:type
+      objects:
+        value: http://purl.obolibrary.org/obo/NCIT_C18020
+        type: iri
+  longitudinal_information_gathering_process_diseaseX_has_part_patientRole_phenotyping_process:
+    sources:
+    - cde_patient_phenotyping-source
+    s: this:individual_$(pid)_process#longitudinal_information_gathering_process_diseaseX
     po:
     - predicates: http://semanticscience.org/resource/has-part
       objects:
@@ -148,15 +188,6 @@ mappings:
       objects:
         value: "$(HP_Label)"
         datatype: xsd:string
-  patientRole_phenotyping_process_output_annotation_start:
-    sources:
-    - cde_patient_phenotyping-source
-    s: this:individual_$(pid)_$(uniqid)#patientRole_phenotyping_process_Output
-    po:
-    - predicates: http://semanticscience.org/resource/start-date
-      objects:
-        value: "$(date)"
-        datatype: xsd:date
   inout_from_patientRole_phenotyping_process_refers_to_concepts:
     sources:
     - cde_patient_phenotyping-source
