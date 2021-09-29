@@ -147,11 +147,10 @@ The `YARRRML` templates are always loaded from GitHub automatically, so they sta
 Make sure the following folder structure, relative to where you plan to keep your pre and post-transformed data, is available:
 ```
         .
-        ./data/   
-        ./data/mydataX.csv  (input csv files, e.g. "height.csv")
-        ./data/mydataY.csv...
-        ./data/triples/  (output FAIR data ends up here)
-        ./config/   (this is the folder where yarrrml templates will be automatically loaded from the EJP repository)
+        .cde-ready-to-go/data/   
+        .cde-ready-to-go/data/mydataX.csv  (input csv files, e.g. "height.csv")
+        .cde-ready-to-go/data/mydataY.csv...
+        .cde-ready-to-go/config/   (this is the folder where yarrrml templates will be automatically loaded from the EJP repository)
 ``` 
 **Step 2:**  Edit the .env file
 
