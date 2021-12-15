@@ -166,7 +166,7 @@ optimally, these URLs will resolve...
 
 **Step 3:**  Running data transformation services
 
-Then you can run the data transformation services setup by running the `docker-compose.yml` file in `cde-in-box/cde-ready-to-go` directory.  Be sure that you move this into the appropriate location; **THE docker-compose MUST BE RUN IN THE SAME FOLDER THAT CONTAINS THE ./data/triples and ./config and subfolders**
+Then you can run the data transformation services setup by running the `docker-compose.yml` file in `cde-in-box/cde-ready-to-go` directory.  Be sure that you move this into the appropriate location; **THE docker-compose MUST BE RUN IN THE SAME FOLDER THAT CONTAINS THE ./data and ./config and subfolders**
 
 You should then refresh your local copies of the docker images, to ensure they are up-to-date with what EJP is providing:
 
