@@ -15,7 +15,7 @@ In order to use the cde-in-box solution you `have to` meet following requirement
 * Docker engine​
 * Docker-compose application​
 
-## Softwares used in CDE in a box
+## Software used in CDE in a box
 The image below gives an overview of softwares used in the `CDE in a box` solutions.
 
 <p align="center"> 
