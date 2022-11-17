@@ -11,7 +11,7 @@ GRAPHDB_ADMIN_PASSWORD = os.environ['GRAPH_DB_ADMIN_PASSWORD']
 def check_triple_store_status(graphdb_url):
     url = graphdb_url + "/rest/repositories"
     try:
-        response = requests.request("GET", url)
+        response = requests.request("GET", url,auth = HTTPBasicAuth(GRAPHDB_ADMIN_USER,GRAPHDB_ADMIN_PASSWORD))
         print(response.headers)
         if response.status_code == 200:
             return True
@@ -24,8 +24,9 @@ def check_repository(graphdb_url, repo_id):
     url = graphdb_url + "/rest/repositories/" + repo_id
     does_repo_exists = False
     headers = {'Accept': "text/turtle"}
+    print("Checking repository")
 
-    response = requests.request("GET", url, headers=headers)
+    response = requests.request("GET", url, headers=headers, auth = HTTPBasicAuth(GRAPHDB_ADMIN_USER,GRAPHDB_ADMIN_PASSWORD))
     print(response.headers)
 
     if response.status_code == 200:
@@ -40,6 +41,8 @@ def create_repository(graphdb_url, repo_id, repo_description):
         time.sleep(5)
 
     if not check_repository(graphdb_url, repo_id):
+        print("repository was not found.  ...now creating")
+
         repo_config = None
         with open('templates/repo-config.mustache', 'r') as f:
             repo_config = chevron.render(f, {'id': repo_id, 'description': repo_description})
@@ -51,10 +54,10 @@ def create_repository(graphdb_url, repo_id, repo_description):
         config_file = open("config.ttl", "rb")
         url = graphdb_url + "/rest/repositories"
 
-        response = requests.request("POST", url, files={"config": config_file})
+        response = requests.request("POST", url, files={"config": config_file}, auth = HTTPBasicAuth(GRAPHDB_ADMIN_USER,GRAPHDB_ADMIN_PASSWORD))
         print(response.headers)
         if response.status_code == 201:
-            print(repo_id + " repository has be created")
+            print(repo_id + " repository has been created")
     else:
         print(repo_id + " repository already exits")
 
@@ -93,4 +96,3 @@ if graphdb_url.endswith("/"):
     graphdb_url = graphdb_url[:-1]
 print(graphdb_url)
 main(graphdb_url)
-
