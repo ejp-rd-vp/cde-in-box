@@ -1,0 +1,5 @@
+# this is the root for all URLs created during transformation
+baseURI=http://example.org/data/
+# must have write access to CDE repository
+GraphDB_User=admin
+GraphDB_Pass=root
