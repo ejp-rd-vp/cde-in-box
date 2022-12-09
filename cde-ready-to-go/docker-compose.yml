@@ -2,7 +2,8 @@ version: "3"
 services:
 
   cde-box-daemon: 
-    image: markw/cde-box-daemon:0.3.0
+#    image: markw/cde-box-daemon:0.3.0  # For CDE Version 1 models
+    image: markw/cde-box-daemon:0.4.0  # For CDE Version 2 models
     container_name: cde-box-daemon
     depends_on:
       - yarrrml_transform

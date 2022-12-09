@@ -135,7 +135,7 @@ In order to add content to the FAIR Data Point you need credentials with write a
 
 #### Preparing input data
 
-The transformation services take `CSV` as input files. We provide `CSVs` with example data and `YARRRML` templates for each CDE module [here](https://github.com/ejp-rd-vp/CDE-semantic-model-implementations/tree/master/YARRRML_Transform_Templates).
+The transformation services take `CSV` as input files. We provide `CSVs` with example data and `YARRRML` templates for each CDE module [here](https://github.com/ejp-rd-vp/CDE-semantic-model-implementations/tree/master/CDE_version_2.0.0).  (note that this leads you to the CDE Version 2 models.  If you still depend on Version 1 models, navigate up one folder to the Version 1 models).
 The `YARRRML` templates are always loaded from GitHub automatically, so they stay up-to-date as we change the models in EJP-RD, but the `CSV` files must be added by the user.
 
 
@@ -182,14 +182,14 @@ docker-compose up -d
 
 **Step 4:** Input CSV files
 
-Put an appropriately columned `XXXX.csv` into the `cde-in-box/cde-ready-to-go/data`. Please look into [this](https://github.com/ejp-rd-vp/CDE-semantic-model-implementations/tree/master/YARRRML_Transform_Templates) github repository for examples of CDEs `CSV` files.
+Put an appropriately columned `XXXX.csv` into the `cde-in-box/cde-ready-to-go/data`. Please look into [this](https://github.com/ejp-rd-vp/CDE-semantic-model-implementations/tree/master/CDE_version_2.0.0) github repository for examples of CDEs `CSV` files.
 
 
 **Step 5:** Input YARRRML templates
 
 The `YARRRML` templates are always loaded from GitHub automatically on step 5, so they stay up-to-date as we change the models in EJP-RD.
 
-Make sure the `YARRRML` templates files are matching your `CSV` files names `XXXX_yarrrml_template.yaml` and are in the `cde-in-box/cde-ready-to-go/config` folder. Please look into [this](https://github.com/ejp-rd-vp/CDE-semantic-model-implementations/tree/master/YARRRML_Transform_Templates) github repository for CDEs `YARRRML` templates.
+Make sure the `YARRRML` templates files are matching your `CSV` files names `XXXX_yarrrml_template.yaml` and are in the `cde-in-box/cde-ready-to-go/config` folder. Please look into [this](https://github.com/ejp-rd-vp/CDE-semantic-model-implementations/tree/master/CDE_version_2.0.0) github repository for CDEs `YARRRML` templates.
 
 
 **Step 6:**  Executing transformations
